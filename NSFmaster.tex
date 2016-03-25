@@ -17,7 +17,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                   %%
 \newcommand{\required}[1]{\section*{\hfil #1\hfil}}                    %%
 \renewcommand{\refname}{\hfil References Cited\hfil}                   %%
-\bibliographystyle{plain}                                              %%
+\usepackage{biblatex}
+%\bibliographystyle{plain}                                              %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %PUT YOUR MACROS HERE
@@ -34,15 +35,15 @@
 \begin{document}
 
 \setcounter{page}{1}
-\include{NSFdata.tex}
+\include{NSFdata}
 
-\include{NSFsumm.tex}
- \setcounter{page}{1}
-\include{NSFdesc.tex}
- \setcounter{page}{1}
- \include{NSFrefs.tex}
- \setcounter{page}{1}
- \include{NSFbio.tex}
-
+\include{NSFsumm}
+\setcounter{page}{1}
+\include{NSFdesc}
+\setcounter{page}{1}
+\include{NSFrefs}
+\setcounter{page}{1}
+\include{NSFbio}
+\printbibliography
 
 \end{document}
