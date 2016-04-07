@@ -1,7 +1,6 @@
 
 %%%%%%%%% PROPOSAL -- 15 pages (including Prior NSF Support)
 
-\required{Project Description}
 
 % From the NSF Grants Proposal Guide:
 % "The Project Description should provide a clear statement of the work 
@@ -11,15 +10,225 @@
 % to work in progress by the PI under other support and to work in progress 
 % elsewhere."
 
-\subsection{Introduction}
 
-\subsection{The scikit-learn package and ecosystem}
+\required{Project Description}
+\subsection{Introduction}
+As sciences move towards more data driven research, data analysis has
+become a main building block of many research disciplines.
+Many advances in recent research have been driven by algorithmic improvements
+in data analysis, in particular in predictive analystics and machine learning.
+[FIXME examples, cite?]
+As machine learning becomes a tool for scientists accross disciplines, it is
+important that this analytical tools are freely available, and easy to use for
+domain scientists outside of the field of machine learning.
+
+% FIXME fast prototyping
+
+The scikit-learn machine learning library provides machine learning functunality
+within the established -- but still growing -- scientific python ecosystem.
+Scikit-learn is an open source library written in Python, implementing state-of-the-art
+machine learning algorithm and utilities to apply these algorithms to real-world
+data analysis and prediction problems.
+
+The distinguishing features of scikit-learn are its generic and intuitive
+interface, its comprehensiveness and its documentation.
+
+\emph{Interface} Scikit-learn provides a generic interface for machine learning, mainly consisting
+of only three methods: fit, to build models, predict, to make predictions using models,
+and transform, to change the representation of the input data.
+This simple and consistent interface helps to abstract away the algorithm, and let
+users focus on their particular problem. It also allows replacing an algorithm by another
+by changing a single line of code.
+Scikit-learn utilizes the well-established NumPy library to represent data and predictions.
+NumPy is used across domains for numeric computations, and integrating this generic
+representation into scikit-learn minimizes the friction of applying machine learning
+within an existing project.
+
+\emph{Comprehensiveness} Scikit-learn implements a wide variety of models for classification,
+regression, clustering and dimensionality reduction, as well as methods for feature
+selection and feature extraction. The library contains most of the algorithms included
+in standard textbooks like FIXME bishop and ESL, while providing competitive implementation
+of state-of-the-art algorithms like Gradient Boosting, Random Forests and SAG FIXME.
+In addition to a large selection of algorithms, scikit-learn also contains a suite
+of evaluation metrics and tools for parameter selection.
+
+\emph{Documentation}
+Documentation is a key ingredient to usability, and the documentation of scikit-learn
+has been widely recognized as a useful resource FIXME. The scikit-learn project
+has strict rules on documentation and requires examples and extensive descriptions
+for all algorithms.
+
+These features lead to a wide-spread use of scikit-learn, and the FIXME of a large
+ecosystem of users, contributors, maintainers and dependent packages.
+
+\subsection{Previous impact of the scikit-learn package}
+The scikit-learn project has been widely used in academic and industrial research,
+and has made its way into multiple commercial products. The paper describing scikit-learn
+has been cited 2720 according to google scholar. Applications of scikit-learn spread
+a multitude of research areas, including FIXME Physics, Astronomy,
+Biology, Medicine, Psychology, Cyber Security, Oceanograpy, Sociology and more.
+
+The mailing list has X subscribers, with on average X mails per month.
+The issue tracker FIXME stackoverflow FIXME, forks FIXME
+dependent packages? 6606 (depsy)
+
+Ecosystem around it!
+
+Several books have been written about the use of scikit-learn.
+
+Tutorials at scipy
+
+Number of developers / contributors.
+
+website traffic
+
+report pypi but say its unrealistic and inflated.
 
 \subsection{Proposed Work}
+Despite the extensive documentation, applying machine learning using scikit-learn
+still requires expert knowledge about:
+what kind of models to use for a given task
+what kind of feature extraction and preprocessing is required for a model
+and what parameters to tune, and in which ranges
+
+While it is easy for a scientist to create a working model, this model might not
+be optimum, and they could obtain a much better model using more expert knowledge
+in machine learning.
+However, the need for this expert knowledge can be eliminated at least partially
+using recent developments in model selection and meta-learning.
+
+Funding form this proposal would enable a concentrated effort to include more
+automatic model selection in scikit-learn, and therefore lower the barrier to
+entry for applying machine learning even further.
+
+The components of the proposed work are
+- Improving the existing pipelining facilities for more automatic feature extraction.
+- Provide explicit sets of parameters to tune for each algorithm, together with recommended ranges.
+- Integrate methods for Bayesian optimization for parameter selection.
+- Integrate meta-learning for automatic model selection.
+
+\subsection{Intellectual Merit}
+Improving automation in model selection and preprocessing in scikit-learn will have far-reaching
+implications for existing and future applications of machine learning.
+Research projects that already use scikit-learn for machine learning will be able to adapt better
+models with minimal changes to their workflow, potentialy improving their research outcomes.
+For research projects that are not relying on machine learning yet, including a model
+from scikit-learn will be much easier and require much less expert knowledge.
+
+Developing more automated model selection requires extensive benchmarking and evaluation
+on a diverse array of machine learning problems. Such a large scale evaluation,
+in the spirit of FIXME and autosklearn FIXME? can provide important insights into
+the state of the art in machine learning, and will result in improved infrastructure
+for large scale studies of algorithms.
+
+\required{The scikit-learn package and ecosystem}
+The scikit-learn machine learning library is an open source library for the
+Python programming language, distributed under a BSD license.
+It is developed largely by a community of volunteers, with some support from
+Inria FIXME, Telecom ParisTech and through PI Mueller as part of the
+Moore-Sloan Data Science Environment at NYU.
+The package was first released in 2010, and new releases are made semi-annually.
+The development team has 38 members, and releases and project management are
+coordinated between PI Mueller and Olivier Grisel at FIXME.
+There have been approximately 670 contributors to the project so far, demonstrating
+the wide community engagement, with each release typically including changes
+from 100 and 150 contributors.
+
+\subsection{Project Description}
+The scikit-learn project focusses on effective and easy to use implementation
+of state-of-the-art machine learning algorithms that are usefull for a wide
+audience of machine learning practitioners in research and commercial applications.
+Implemented algorithms include Support Vector Machines, Random Forests, Gradient Boosting,
+Non-Negative Matrix factorization, Independent Component Analysis, K-Means, DBSCAN, Isomap,
+t-SNE and many others. To facilitate easy evaluation and model selection, scikit-learn
+implements metrics like the the R^2, AUC, Adjusted Rand score, Mutual information, Average precision
+and many more. Additionally, a framework for cross-validation and parameter selection is
+provided, allowing parameter tuning with very little effort.
+
+Given that scikit-learn is mostly developed and maintained by volunteers,
+one of the core principles of scikit-learn is to lower the barrier for new developers,
+and keep the complexity of the code as low as possible, to simplify maintenance.
+The success of this approach can be seen in the large number of contributors to
+the project.
+
+\subsection{Interface and extensibility}
+The simple interface of scikit-learn has received FIXME praise for its design and user-friendlyness.
+The main functionality of machine learning models can be summarized using just three functions:
+
+fit for building models
+
+predict for creating predictions
+
+transform for generating new representations.
+
+Creating a custom model or preprocessing method using this interface is very simple,
+and a way in which many users extend the functionality. The scikit-learn documentation
+has comprehensive documentation on the conventions and interfaces in scikit-learn,
+to promote the creation of custom extensions.
+The scikit-learn library even has a generic test framework that allows users to
+test their own implementation against the behavior expected by scikit-learn.
+
+\subsection{Impacts in research}
+Scikit-learn has had an impact first in the field of machine learning,
+where it continues to provide a baseline for comparison, as well as a
+framework in which to develop and evaluate new methods.
+The much broader omni-disciplinary impact is in providing easy-to-use
+tools for solving machine learning tasks. By providing a collection
+of methods with a simple and consistent interface, researchers
+can easily explore different solutions to their machine learning problems,
+with a large collection of well-tested and well-established algorithms
+at their finger tips.
+The adoption of scikit-learn in research can be seen in the large number
+of citations (FIXME according to google scholar) as well as in the development
+of more domain specific solutions build on scikit-learn.
+According to the email addresses used for contributions, researchers and students
+from at least 23 US universities \emph{contributed} to scikit-learn, indicating wide-spread use.
+
+\subsection{Impacts in education}
+In addition to being widely used as a toolkit by practitioners,
+Scikit-learn is also popular in teaching machine learning.
+The emphasis on accessibility, usability and documentation within
+the scikit-learn project makes it ideal for an introductory
+course in machine learning, and allows access to a wide variety
+of algorithms. Scikit-learn is particularly popular in teaching
+"Data Science" courses that focus on making inferences about
+a particular data set, rather than the mathematics that go into
+particular ways to solve machine learning problems.
+Data Science courses are usually targeted at a broad spectrum
+of students with mixed backgrounds, providing them
+with the data analysis tools useful across domains.
+
+Courses using scikit-learn have been tought at universities
+including NYU, Brown, Duke, Berkeley, Stanford, Princeton,
+Columbia, University of Pensilvania, Georgetown University, Cornell
+and others. FIXME names spelling / naming.
+
+
+\subsection{Reproducibility, democratization and openness}
+An important contribution of scikit-learn has been in providing a common
+ground for scientists to base their research on. Reimplementing
+and algorithm from a text book or the description in a paper is often not
+straight-forward, and slight differences in implementation details can
+lead to different learning outcomes. By providing shared, open and 
+accessible infrastructure that is used by many research groups,
+scikit-learn facilitates reproducibility of algorithmic results.
+
+
+\subsection{Integration in scientific python ecosystem}
+Anaconda? Works well with Jupyter?
+
+\required{Proposed Enhancements}
+\subsection{Default Parameter Ranges}
+\subsection{Bayesian Optimization Based Parameter Selection}
+\subsection{Automatic Pipeline Selection}
+\subsection{Meta-Learning}
 
 
 \required{Enabled Research Opportunities}
-
+\subsection{Reduce Barrier to Entry}
+\subsection{Large-Scale comparisons}
+\subsection{Improved Rapid Prototyping}
+\subsection{Plug-In Replacements}
 
 
 \required{Broader Impacts of the Proposed Work}
@@ -34,6 +243,7 @@
 \subsection{Software Quality and Testing}
 \subsection{Documentation and Distribution}
 \subsection{Sustainability Plan}
+% GSOC somewhere? Broader impacts?
 
 \required{Project Coordination and Evaluation Plan}
 \subsection{Project Coordination and Timeline}
@@ -46,6 +256,7 @@
 
 
 \required{Results From Prior NSF Support}
+Dr. Andreas Mueller has not been a PI or co-PI on NSF grants.
 % 5 pages or fewer of the 15 pages for entire description document.
 % include a summary of results of the completed work, 
 % including accomplishments,supported from NSF grants received 
