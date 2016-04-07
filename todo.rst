@@ -4,6 +4,7 @@ code for grid search
 timeline of project
 map of ecosystem?
 
+add references.
 
 
 resources
@@ -24,3 +25,7 @@ http://www.journalism.columbia.edu/page/1060-the-lede-program
 https://confluence.cornell.edu/pages/viewpage.action?pageId=312839711
 https://bcourses.berkeley.edu/courses/1377158/pages/lab-8
 http://cs224d.stanford.edu/assignment2/index.html
+
+
+github notebooks:
+filename:.ipynb sklearn

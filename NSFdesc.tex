@@ -141,7 +141,7 @@ audience of machine learning practitioners in research and commercial applicatio
 Implemented algorithms include Support Vector Machines, Random Forests, Gradient Boosting,
 Non-Negative Matrix factorization, Independent Component Analysis, K-Means, DBSCAN, Isomap,
 t-SNE and many others. To facilitate easy evaluation and model selection, scikit-learn
-implements metrics like the the R^2, AUC, Adjusted Rand score, Mutual information, Average precision
+implements metrics like the the $R^2$, AUC, Adjusted Rand score, Mutual information, Average precision
 and many more. Additionally, a framework for cross-validation and parameter selection is
 provided, allowing parameter tuning with very little effort.
 
@@ -212,17 +212,102 @@ straight-forward, and slight differences in implementation details can
 lead to different learning outcomes. By providing shared, open and 
 accessible infrastructure that is used by many research groups,
 scikit-learn facilitates reproducibility of algorithmic results.
-
+The open source nature of scikit-learn means that everybody can have access
+to advanced machine learning within the scientific python eco-system,
+without having to spend money on commercial analysis software like Matlab,
+SPSS or Stata.
 
 \subsection{Integration in scientific python ecosystem}
-Anaconda? Works well with Jupyter?
+Scikit-learn is firmly rooted in the scientific Python ecosystem, and has been
+one of the catalysts of its success. Scikit-learn builds heavily on the
+foundations on numpy and scipy, and integrates easily with the popular pandas
+library for data analysis and the matplotlib library for plotting and
+visualization.
+Scikit-learn has been included in several scientific python distributions, such
+as the popular cross-platform ContinuumIO Anaconda and Enthought Canopy
+distributions, as well as the Python-xy distribution for Microsoft Windows.
+
+The succinct interface of scikit-learn also lends itself well to interactive
+data exploration and model building within the Jupyter Notebook environment.
+Searching for jupyter notebooks containing scikit-learn code on the GitHub code
+hosting platform yields about 40000 results at the time of writing.
 
 \required{Proposed Enhancements}
-\subsection{Default Parameter Ranges}
-\subsection{Bayesian Optimization Based Parameter Selection}
-\subsection{Automatic Pipeline Selection}
-\subsection{Meta-Learning}
+While the scikit-learn package is under constant development by a large community
+of volunteers, the size and widespread use FIXME of the package result in much of this
+time being spend on maintenance and usability improvement, leaving little room
+for larger scale efforts to include major changes. The goal of this proposal
+is to implement major usability and automation features in scikit-learn, decreasing
+the domain expertise required to succesfully implement machine learning models.
+We propose to improve three aspects of applying machine learning models that
+currently require substantial expert knowledge: parameter selection, model
+selection and data preprocessing.
 
+\subsection{Default Parameter Ranges}
+Nearly all machine learning models come with parameters to set or tune
+to achieve good predictive performance. The most wide-spread way to adjust
+these parameters is grid-search with nested cross-validation.
+Grid-search describes the exhaustive search over all possible combinations
+of the parameters under consideration.
+A major hurdle in applying grid-search in practice is that algorithms
+often have many different tuning parameters, making exhausive search
+over all of them infeasible. However, in practice only a small subset
+of the parameters is usually critical for good performance. This set,
+and good candiate features are not usually well known and not included in text books.
+The scikit-learn documentation tries to give guidelines, but these can be hard
+to find and understand by people outside of machine learning.
+We propose the inclusion of a programmatic way to query for the parameters
+to adjust for each model, and what good parameter ranges are.
+
+While there is some community consensus on this issue, we want to back
+up our choices by large scale experiments on existing benchmark libraries
+of datasets, like OpenML.
+
+\subsection{Bayesian Optimization Based Parameter Selection}
+An alternative to exhaustive grid-search in selecting parameters is using
+bayesian optimization to iteratively improve the tuning parameters of a model.
+This technique has been well-established in the machine learning literature,
+but has not made its way into the software used by domain scientists that use
+machine machine learning algorithms as tools in their research.
+By incorporating a robust and efficient implementation into scikit-learn,
+this proposal will bring the benefits of the recent advantages in model selection
+from the machine learning community to the scientific users of scikit-learn.
+
+\subsection{Automatic Preprocessing Selection}
+Scikit-learn has a build-in mechanism to construct "pipelines" which are complex 
+machine learning workflows, consisting of operations like feature extraction,
+feature transformation, feature selection and predictive models.
+All evaluation and parameter selection mechanisms in scikit-learn can operate
+on these pipelines.
+However, selecting which steps to chain together, that is which preprocessing
+to use for which model, is left to the user. Currently there is no
+automatic process to compare different pipeline constructions, even though
+the right combination of methods is often not obvious in practice.
+We propose to extend the model selection and pipelining framework in scikit-learn
+to allow automatic selection of pipeline steps.
+To facilitate automatic preprocessing selection, we will also programatically
+define input and output conditions of different processing steps, such
+as requirements for sparse data, dense data, non-negativity of features and others.
+
+\subsection{Meta-Learning}
+Going beyond brute-force search or even bayesian optimization for parameter and
+model selection, it is possible to use machine learning to recommend suitable
+algorithms and parameters based on properties of a data set, such as number of
+samples, number of features, number of classes and statistical properties of
+the features. 
+Given the meta-features and the best pipeline and parameters found using
+Bayesian optimization or grid-search, it is then possible to build a machine
+learning model to predict what the best classifier for a new dataset would be.
+This prediction based on meta-features is computationally much less demanding
+than searching for a model and parameters from scratch for each new dataset.
+Meta-learning allows the principled incorporation of expert knowledge as encoded
+in the collection of datasets used for training.
+While there are working implementations of meta-learning available (autoweka, auto-sklearn),
+these projects are currently in a "research software" state. Making these methods
+available to the wider scientific audience will require substantial engineering
+effort. The above steps of incorporating Bayesian optimization and automatic
+preprocessing selection will lay the foundation to enable meta-learning within the
+scikit-learn framework.
 
 \required{Enabled Research Opportunities}
 \subsection{Reduce Barrier to Entry}
