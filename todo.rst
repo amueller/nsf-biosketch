@@ -29,3 +29,6 @@ http://cs224d.stanford.edu/assignment2/index.html
 
 github notebooks:
 filename:.ipynb sklearn
+
+search core jupyter notebooks containing scikit-learn with edu email addresses -> unique users!
+sklearn edu in:email filename:.ipynb
