@@ -32,3 +32,14 @@ filename:.ipynb sklearn
 
 search core jupyter notebooks containing scikit-learn with edu email addresses -> unique users!
 sklearn edu in:email filename:.ipynb
+
+
+openml for storing result data. they have a good plan.
+
+Letters of collaboration:
+Frank Hutter
+Joaquin
+Kyle Cranmer
+David Hogg
+Randy Olson (?)
+ChrisFonnesbeck
