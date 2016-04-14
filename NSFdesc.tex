@@ -292,6 +292,10 @@ to adjust for each model, and what good parameter ranges are.
 While there is some community consensus on this issue, we want to back
 up our choices by large scale experiments on existing benchmark libraries
 of datasets, like OpenML~\cite{van2013openml}.
+\begin{description}
+    \item [Task 1] Benchmark parameter ranges of commonly used supervised models.
+    \item [Task 2] Provide default parameter ranges inside scikit-learn.
+\end{description}
 
 \subsection{Bayesian Optimization Based Parameter Selection}
 An alternative to exhaustive grid-search in selecting parameters is using
@@ -304,6 +308,11 @@ their research.
 By incorporating a robust and efficient implementation into scikit-learn,
 this proposal will bring the benefits of the recent advantages in model selection
 from the machine learning community to the scientific users of scikit-learn.
+\begin{description}
+    \item [Task 3] Benchmark and integrate Gaussian Process based parameter oprimization.
+    \item [Task 4] Benchmark Random Forest based parameter optimization.
+    \item [Task 5] Integrate auto-sklearn bayesian optimization with scikit-learn.
+\end{description}
 
 \subsection{Automatic Preprocessing Selection}
 Scikit-learn has a build-in mechanism to construct ``pipelines'' which are complex 
@@ -320,6 +329,13 @@ to allow automatic selection of pipeline steps.
 To facilitate automatic preprocessing selection, we will also programatically
 define input and output conditions of different processing steps, such
 as requirements for sparse data, dense data, non-negativity of features and others.
+\begin{description}
+    \item [Task 6] Allow setting of pipeline steps in scikit-learn parameter searches.
+    \item [Task 7] Implement tagging of pre-conditions and post-conditions for data transformations.
+    \item [Task 8] Refactor scikit-learn testing to validate pre-condition and post-condition tags.
+    \item [Task 9] Collect common encoding schemes for categorical and
+        continuous data in a scikit-learn compatible way.
+\end{description}
 
 \subsection{Meta-Learning}
 Going beyond brute-force search or even bayesian optimization for parameter and
@@ -340,6 +356,12 @@ available to the wider scientific audience will require substantial engineering
 effort. The above steps of incorporating Bayesian optimization and automatic
 preprocessing selection will lay the foundation to enable meta-learning within the
 scikit-learn framework.
+\begin{description}
+    \item [Task 10] Refactor auto-sklearn to make use of new pipeline and transformation conditions.
+    \item [Task 11] Benchmark meta-learning features on OpenML datasets.
+    \item [Task 12] Create meta-learning package with full user documentation
+        and test coverage that is installable via the python package manager.
+\end{description}
 
 \section{Enabled Research Opportunities}
 The proposed project will benefit researchers inside the machine learning field,
