@@ -43,3 +43,6 @@ Kyle Cranmer
 David Hogg
 Randy Olson (?)
 ChrisFonnesbeck
+
+sourceforge downloads
+email list stats!!!
