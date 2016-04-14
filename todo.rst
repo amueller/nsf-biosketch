@@ -3,9 +3,10 @@ code for classifier
 code for grid search
 timeline of project
 map of ecosystem?
-
-add references.
-
+table for API
+pipeline?
+scikit-learn website traffic
+cool colorful plot?
 
 resources
 =================
@@ -47,12 +48,5 @@ Kyle Cranmer
 David Hogg
 Randy Olson (?)
 ChrisFonnesbeck
-
-
-sourceforge downloads
-email list stats!!!
-hits in search on google scholar
-
-cite tpot?
 
 mention pystruct and wordcloud?

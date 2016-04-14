@@ -1,4 +1,4 @@
-all: NSFbio.tex  NSFdata.tex  NSFdesc.tex  NSFmaster.tex  NSFrefs.tex  NSFsumm.tex
+all: NSFbio.tex  NSFdata.tex  NSFdesc.tex  NSFmaster.tex  references.bib  NSFsumm.tex
 	rubber --pdf NSFmaster.tex
 
 clean: 
