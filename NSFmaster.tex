@@ -21,7 +21,7 @@
 \newcommand{\required}[1]{\section*{\hfil #1\hfil}}                    %%
 \renewcommand{\refname}{\hfil References Cited\hfil}                   %%
 \usepackage{biblatex}
-%\bibliographystyle{plain}                                              %%
+\bibliography{references}                                          %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %PUT YOUR MACROS HERE
@@ -43,9 +43,9 @@
 \setcounter{page}{1}
 \pagestyle{plain}
 \include{NSFdesc}
-\include{NSFrefs}
+\printbibliography
+
 \setcounter{page}{1}
 \include{NSFbio}
-\printbibliography
 
 \end{document}
