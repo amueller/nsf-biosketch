@@ -30,11 +30,15 @@ http://cs224d.stanford.edu/assignment2/index.html
 github notebooks:
 filename:.ipynb sklearn
 
+filename:setup.py scikit-learn
+
 search core jupyter notebooks containing scikit-learn with edu email addresses -> unique users!
 sklearn edu in:email filename:.ipynb
 
+git log --format='%aE' | sort -u | grep edu | sort -u > mails 
 
-openml for storing result data. they have a good plan.
+http://stackoverflow.com/tags/scikit-learn/topusers
+
 
 Letters of collaboration:
 Frank Hutter
@@ -50,3 +54,5 @@ email list stats!!!
 hits in search on google scholar
 
 cite tpot?
+
+mention pystruct and wordcloud?

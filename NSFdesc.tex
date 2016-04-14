@@ -65,26 +65,53 @@ ecosystem of users, contributors, maintainers and dependent packages.
 \section{Previous impact of the scikit-learn package}
 The scikit-learn project has been widely used in academic and industrial research,
 and has made its way into multiple commercial products. The
-paper~\cite{pedregosa2011scikit} describing scikit-learn has been cited 2720
+paper~\cite{pedregosa2011scikit} describing scikit-learn has been cited 2746
 according to google scholar. Applications of scikit-learn spread
-a multitude of research areas, including FIXME Physics, Astronomy,
-Biology, Medicine, Psychology, Cyber Security, Oceanograpy, Sociology and more.
+a multitude of research areas, including Physics, Astronomy,
+Biology, Medicine, Psychology, Cyber Security, Oceanograpy, Sociology and more. FIXME add citations
 
-The mailing list has X subscribers, with on average X mails per month.
-The issue tracker FIXME stackoverflow FIXME, forks FIXME
-dependent packages? 6606 (depsy)
+The number of 2746 is likely underestimating the use of scikit-learn in published research, as a search for the
+term ``scikit-learn'' yields 4850 results.
+Other ways to measure the use and impact of scikit-learn is the engagement with
+the project via code contributions, downloads, support requests and other
+community interactions.
+According to the email addresses used for code contributions (a conservative
+estimate), 40 researchers and students from at least 23 US universities
+\emph{contributed code} to scikit-learn, indicating wide-spread academic use.
+These institutes include Berkeley, Brown, CMU, Columbia, Duke, Harvard, MIT,
+NYU, Stanford, and University of Washington.
+The total number of unique contributors to the project is about 700.
 
-Ecosystem around it!
+The scikit-learn mailing list has 1666 subscribers, including 70 email
+addresses from ``edu'' domains, across 43 institutes.
+
+On the question-answering site Stackoverflow, there are around 4500 questions
+tagged as scikit-learn related, with 222 questions asked within the last 30
+days of this writing.
+
+For the last 5 years, the scientific Python conference scipy has had a scikit-learn tutorial,
+showing the great demand for education in using machine learning and scikit-learn in particular.
+In 2015, the tutorial was so overbooked that a second session was held.
+
+Scikit-learn has become the center of the machine learning ecosystem in the scientific python community,
+with several domain-specific packages relying on and extending its functionality.
+Prominent examples of scientific software packages depending on scikit-learn
+for machine learning include astroML~\cite{van2013openml} for astronomical
+data, nilearn~\cite{abraham2014machine} for neuroimaging, MNE-Python for MEG
+and EEG data, librosa~\cite{mcfee2015librosa} for audio and musical data,
+nltk~\cite{bird2006nltk} and rosetta for Natural language processing, bcbio for
+RNA sequence analysis, scikit-allel for genetic variation data, and rootpy for
+the ROOT scientific software framework.
+The main use of scikit-learn is outside of these major open source packages, though,
+as stand alone library for data analysis. Using the github repository, we found
+about 40.000 jupyter notebooks---a format for interactive computing with python---at the time of writing.
+
+The scikit-learn website containing the documentation was visited by over
+230.000 users in March 2016, upward from 200.000 users in February and 180.000 users in January,
+reflecting the growth of the scikit-learn user community.
 
 Several books have been written about the use of scikit-learn~\cite{garreta2013learning, hackeling2014mastering, hauck2014scikit, raschka2015python}.
 
-Tutorials at scipy
-
-Number of developers / contributors
-
-website traffic
-
-report pypi but say its unrealistic and inflated.
 
 \section{Proposed Work}
 Despite the extensive documentation, applying machine learning using scikit-learn
@@ -231,8 +258,9 @@ distributions, as well as the Python-xy distribution for Microsoft Windows.
 
 The succinct interface of scikit-learn also lends itself well to interactive
 data exploration and model building within the Jupyter Notebook environment.
-Searching for jupyter notebooks containing scikit-learn code on the GitHub code
-hosting platform yields about 40000 results at the time of writing.
+As mentioned previously, searching for jupyter notebooks containing
+scikit-learn code on the GitHub code hosting platform yields about 40000
+results. FIXME
 
 \section{Proposed Enhancements}
 While the scikit-learn package is under constant development by a large community
@@ -463,9 +491,9 @@ anaconda, canopy and Python-xy, the package managers of linux distributions (lik
 and downloads directly from the github repository. Most of these distributions paths are hard
 or impossible to track. The python package manger for example reports over 500.000 downloads of the last
 release, which is likely to be inflated when taken as a measure of users.
-On the other hand, the number of citations of the relevant paper FIXME, around
-2700, is likely to be much lower than the number of papers actually using the
-scikit-learn library in their research.
+On the other hand, the number of citations of the relevant
+paper\cite{pedregosa2011scikit}, around 2700, is likely to be much lower than
+the number of papers actually using the scikit-learn library in their research.
 
 To get a more comprehensive picture of the use FIXME of a package, we can look
 at the citation and download counts together with other statistics, like the
