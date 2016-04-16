@@ -15,8 +15,10 @@
 \setlength{\footskip}{.5in}       %%                                   %%
 \usepackage{hyperref}
 \hypersetup{pdftex,colorlinks=true,allcolors=blue}
-%\usepackage{scrextend}
+\usepackage{scrextend}
 \usepackage{hypcap}
+\usepackage{xspace}
+\usepackage{pgfgantt}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                   %%
 \newcommand{\required}[1]{\section*{\hfil #1\hfil}}                    %%
 \renewcommand{\refname}{\hfil References Cited\hfil}                   %%
@@ -25,6 +27,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %PUT YOUR MACROS HERE
+\newcommand{\sklearn}[0]{\texttt{scikit-learn}\xspace}                    %%
 
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -43,7 +46,7 @@
 \setcounter{page}{1}
 \pagestyle{plain}
 \include{NSFdesc}
-\printbibliography
+\printbibliography{}
 
 \setcounter{page}{1}
 \include{NSFbio}

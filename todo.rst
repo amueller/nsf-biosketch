@@ -2,11 +2,11 @@ figures:
 code for classifier
 code for grid search
 timeline of project
-map of ecosystem?
 table for API
 pipeline?
 scikit-learn website traffic
 cool colorful plot?
+GP illustration
 
 resources
 =================
