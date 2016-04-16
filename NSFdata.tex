@@ -32,35 +32,39 @@
 
 \textbf{Principle Investigator: Dr.\ Andreas Mueller}\\
 PI Mueller will oversee the data management, and ensure digital preservation of
-all produced data. Dr.\ Mueller will also review the continuous use of version
-control, as well as the documentation of all experimental procedures and the
-documentation of all software artifacts.\\\\
+all produced data. Dr.\ Mueller will also ensure that all resulting materials
+are deposited into a repository that performs digital preservation.
+He will also ensure that all developed code is continuously version-controlled to
+preserve development history.
+\\\\
 \textbf{Research Engineer:}\\
 The Research Engineer will use the github version control platform to
-continuously and incrementaly keep track of software development. While some
+continuously and incrementally keep track of software development. While some
 part of the created software will immediately be integrated in to the
-scikit-learn project, other parts of the software will exist in a seperate
+scikit-learn project, other parts of the software will exist in a separate
 github repository. The Research Engineer will also document all software and
 experimental protocols within the github projects using the sphinx
-documentation generator. The Research Engineer will implement autmatic
-compilation of the documentation into a website that will be publicly
-available.
+documentation generator, the standard tool in the python development community.
+The Research Engineer will implement automatic compilation of the documentation
+into a website that will be publicly available for all materials outside the scikit-learn
+project. Materials contributed to the scikit-learn project are automatically
+published on the scikit-learn website via the scikit-learn infrastructure.
 
-Large scale machine learning experiments will be performed on public datasets
-hosted on the OpenML platform.
-The research engineer will retrieve the data via the OpenML python API, perform
-the experiments, and upload the experimental results to the OpenML platform.
-The research engineer will also upload the collective results of all
-experiments periodically to the figshare platform.
+The research engineer will retrieve public machine learning data sets via the
+OpenML python API, perform the experiments, and upload the experimental results
+to the OpenML platform. Large scale machine learning experiments will be
+performed using the NYU High
+Performance Computing clusters. The research engineer will also upload the
+collective results of all experiments periodically to the figshare platform.
 
 \section{Types of data}
 
-The main output of this project will be python code, which will be archived and
-shared via github. Documentation of experimental procedures and the source code
-will be contained in the same github repository as the code.
+The main output of this project will be python code, which will be recorded and
+shared and shared via github. Documentation of experimental procedures and the
+source code will be contained in the same github repository as the code.
 
 The project will make use of the public machine learning datasets hosted on the
-OpenML platform. We will use hundereds of the datasets hosted there, which will
+OpenML platform. We will use hundreds of the datasets hosted there, which will
 be downloaded via the Python API of OpenML\@. The datasets are stored as ARFF
 files, with the metadata stored as JSON\@. The Python API represents these
 together as Python objects.
@@ -72,7 +76,7 @@ learning algorithms and their accuracy and other evaluation metrics. The
 metadata of these results consists of the original dataset, machine learning
 task, machine learning model that was used, and the parameters of the model.
 
-These results and the meta-data will be captured and uploaded by the OpenML
+These results and the metadata will be captured and uploaded by the OpenML
 Python API to the OpenML platform, which will store it as JSON\@. We will also
 separately store the collected results across many datasets and algorithms on
 figshare as JSON file. This will provide an  simple access mechanism as
@@ -89,14 +93,14 @@ under a BSD license.
 
 Results will be pushed to OpenML immediately as part of the evaluation,
 whenever possible. The results will be archived and published to figshare after
-inital analysis confirmed them to be correct.
+initial analysis confirmed them to be correct.
 All data will be made available under the CC-0 license.
 
 \section{Data storage and preservation of access}
 
 The code will be part of an open source project and thereby handed to the open
 source community. The initial archive will be github, but the community is
-expected to curate and archive the project beyond the livetime of github.
+expected to curate and archive the project beyond the lifetime of github.
 The results will be stored in the OpenML platform and on figshare, both of
 which have long-term preservation guarantees.
 
