@@ -497,10 +497,16 @@ collaboration.
     \begin{ganttchart}[
     hgrid,
     x unit=0.4cm,
+    y unit chart=.5cm,
     compress calendar,
     time slot format=isodate-yearmonth,
-    ]{2016-11}{2019-11}
-    \gantttitlecalendar{year, month}\\
+    bar/.append style={fill=blue!50},
+    title/.append style={fill=black!10},
+    include title in canvas=false,
+    bar top shift=0.2,
+    bar height=.6,
+    ]{2016-11}{2019-10}
+    \gantttitlecalendar{year}\\
     \ganttbar{Task 1}{2016-11}{2017-04} \\
     \ganttbar{Task 2}{2017-05}{2018-4} \\
     \ganttbar{Task 3}{2016-11}{2017-10} \\
