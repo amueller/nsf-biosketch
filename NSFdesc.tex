@@ -48,9 +48,11 @@ within an existing project.
 \emph{Comprehensiveness} Scikit-learn implements a wide variety of models for classification,
 regression, clustering and dimensionality reduction, as well as methods for feature
 selection and feature extraction. The library contains most of the algorithms included
-in standard textbooks like FIXME bishop and ESL, while providing competitive implementation
-of state-of-the-art algorithms like Gradient Boosting, Random Forests and SAG FIXME\@.
-In addition to a large selection of algorithms, \sklearn{} also contains a suite
+in standard textbooks like \textcite{bishop2001bishop} and
+\textcite{friedman2001elements}, while providing competitive implementation of
+state-of-the-art algorithms like Gradient Boosting, Random Forests and SAG
+FIXME\@.  In addition to a large selection of algorithms, \sklearn{} also
+contains a suite
 of evaluation metrics and tools for parameter selection.
 
 \emph{Documentation}
@@ -491,37 +493,41 @@ benchmarking experiments to validate the effectiveness of the parameter
 recommendations and the automation features.  The PI and developer will both
 interact with the greater community via issue trackers, mailing lists and
 chatrooms. The developer and PI will share working space to facilitate
-collaboration.
+collaboration. The timeline of the project is illustrated in Figure~\ref{timeline}
 
 \begin{figure}
     \begin{ganttchart}[
     hgrid,
-    x unit=0.4cm,
+    x unit=0.28cm,
     y unit chart=.5cm,
     compress calendar,
     time slot format=isodate-yearmonth,
     bar/.append style={fill=blue!50},
-    title/.append style={fill=black!10},
     include title in canvas=false,
     bar top shift=0.2,
     bar height=.6,
+    bar label node/.append style={align=left, text width=6cm},
+    y unit title=.3cm
     ]{2016-11}{2019-10}
-    \gantttitlecalendar{year}\\
-    \ganttbar{Task 1}{2016-11}{2017-04} \\
-    \ganttbar{Task 2}{2017-05}{2018-4} \\
-    \ganttbar{Task 3}{2016-11}{2017-10} \\
-    \ganttbar{Task 4}{2017-05}{2017-10} \\
-    \ganttbar{Task 5}{2017-11}{2018-10} \\
-    \ganttbar{Task 6}{2016-11}{2017-04} \\
-    \ganttbar{Task 7}{2016-11}{2017-04} \\
-    \ganttbar{Task 8}{2017-05}{2017-10} \\
-    \ganttbar{Task 9}{2017-11}{2018-10} \\
-    \ganttbar{Task 10}{2017-11}{2018-10} \\
-    \ganttbar{Task 11}{2017-05}{2018-04} \\
-    \ganttbar{Task 12}{2018-11}{2019-10}
+    \gantttitlecalendar[title/.style={draw=none, fill=none}]{year}\\
+    \gantttitlecalendar[title/.append style={fill=black!10}, title label font=\tiny\color{black!10}]{year}\\
+    \ganttbar{1 Benchmark parameter ranges}{2016-11}{2017-04} \\
+    \ganttbar{2 Provide devault ranges}{2017-05}{2018-4} \\
+    \ganttbar{3 GP-base BO}{2016-11}{2017-10} \\
+    \ganttbar{4 RF-based BO}{2017-05}{2017-10} \\
+    \ganttbar{5 Integrate with auto-sklearn BO}{2017-11}{2018-10} \\
+    \ganttbar{6 Searching pipeline steps}{2016-11}{2017-04} \\
+    \ganttbar{7 Transformation conditions}{2016-11}{2017-04} \\
+    \ganttbar{8 Integrate conditions in sklearn}{2017-05}{2017-10} \\
+    \ganttbar{9 Feature encodings in sklearn}{2017-11}{2018-10} \\
+    \ganttbar{10 Sklearn $\leftrightarrow$ auto-sklearn sync}{2017-11}{2018-10} \\
+    \ganttbar{11 Benchmark meta-learning}{2017-05}{2018-04} \\
+    \ganttbar{12 Meta-learning packaging}{2018-11}{2019-10}
     %\ganttlinkedbar{Task 2}{3}{7} \ganttnewline
     %\ganttbar{Final Task}{8}{12}
     \end{ganttchart}
+    \caption{Project timeline}
+    \label{timeline}
 \end{figure}
 
 \subsection{Need for a Senior Developer}
@@ -553,13 +559,13 @@ On the other hand, the number of citations of the relevant
 paper\autocite{pedregosa2011scikit}, around 2700, is likely to be much lower than
 the number of papers actually using the \sklearn{} library in their research.
 
-To get a more comprehensive picture of the use FIXME of a package, we can look
-at the citation and download counts together with other statistics, like the
-number of discussions on the question answering site stackoverflow, the number
-of contributors, the number of people writing to the mailing list, the number
-of projects depending on the package etc.
-These numbers are particularly meaningful when compared to other projects with
-a similar scope.
+To get a more comprehensive picture of the adoption of an open source software
+package, we can look at the citation and download counts together with other
+statistics, like the number of discussions on the question answering site
+stackoverflow, the number of contributors, the number of people writing to the
+mailing list, the number of projects depending on the package etc.  These
+numbers are particularly meaningful when compared to other projects with a
+similar scope.
 
 We will develop the more novel features outside of the \sklearn{} package, which will
 facilitate measuring the impact of the proposed additions. The impact of contributions
@@ -603,7 +609,7 @@ The auto-sklearn project~\autocite{feurer-nips2015} currently provides a researc
 prototype of meta-learning with Bayesian optimization for parameter selection.
 One of the main goals of this proposal is to transfer the research within the
 auto-sklearn project to a easy-to-use and well-documented library, integrated
-within the \sklearn{} ecosystem. FIXME cites To this end, we will collaborate
+within the \sklearn{} ecosystem. To this end, we will collaborate
 with the auto-sklearn team, building upon their insights and technologies.
 Frank Hutter commited to providing the support of his group to integrate our
 additions to \sklearn{}, such as the default parameter ranges and automated
@@ -615,10 +621,12 @@ user-friendly library.
 Evaluation and benchmarking on real-world datasets are essential to this proposal, in providing
 guidance for good parameter ranges, and assessing the success of automatic model selection methods.
 The OpenML project~\autocite{van2013openml} provides a quickly growing database of machine learning datasets with associated
-tasks, including classification and regression~\autocite{vanschoren2014openml}. FIXME number of datasets.
-This growing database or research datasets will provide (FIXME) the basis of our assessments, and
+tasks, including classification and regression~\autocite{vanschoren2014openml}. At the time of this writing, there were nearly 20.000 datasets
+hosted on OpenML, ranging from classical datasets like MNIST and small toy datasets like the iris and wine datasets,
+to large scale datasets with millions or even tens of millions of samples, ranging from biological, medical and physical datasets
+to commercial applications. This growing collection or research datasets provides the basis of our assessments, and
 ensure relevance of our effort across research domains.
-Joaquin FIXMe commited to improving and maintaining the Python interface for the OpenML platform,
+Joaquin Candela commited to improving and maintaining the Python interface for the OpenML platform,
 and improving the support for \sklearn{} based models.
 
 \subsection{Early Adopters}
