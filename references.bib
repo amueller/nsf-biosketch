@@ -9,15 +9,19 @@
   publisher={JMLR. org}
 }
 
-@article{buitinck2013api,
-  title={API design for machine learning software: experiences from the scikit-learn project},
-  author={Buitinck, Lars and Louppe, Gilles and Blondel, Mathieu and Pedregosa, Fabian and Mueller, Andreas and Grisel, Olivier and Niculae, Vlad and Prettenhofer, Peter and Gramfort, Alexandre and Grobler, Jaques and others},
-  journal={arXiv preprint arXiv:1309.0238},
-  year={2013}
+@inproceedings{buitinck2013api,
+  TITLE = {{API design for machine learning software: experiences from the scikit-learn project}},
+  AUTHOR = {Buitinck, Lars and Louppe, Gilles and Blondel, Mathieu and Pedregosa, Fabian and M\"uller, Andreas and Grisel, Olivier and Niculae, Vlad and Prettenhofer, Peter and Gramfort, Alexandre and Grobler, Jaques and Layton, Robert and Vanderplas, Jake and Joly, Arnaud and Holt, Brian and Varoquaux, Ga{\"e}l},
+  URL = {https://hal.inria.fr/hal-00856511},
+  BOOKTITLE = {{European Conference on Machine Learning and Principles and Practices of Knowledge Discovery in Databases}},
+  ADDRESS = {Prague, Czech Republic},
+  YEAR = {2013},
+  MONTH = Sep,
+  PDF = {https://hal.inria.fr/hal-00856511/file/paper.pdf},
 }
 
-@article{Varoquaux:2015:SML:2786984.2786995,
- author = {Varoquaux, G. and Buitinck, L. and Louppe, G. and Grisel, O. and Pedregosa, F. and Mueller, A.},
+@article{Varoquaux_2015,
+ author = {Varoquaux, G. and Buitinck, L. and Louppe, G. and Grisel, O. and Pedregosa, F. and M\"uller, A.},
  title = {Scikit-learn: Machine Learning Without Learning the Machinery},
  journal = {GetMobile: Mobile Comp. and Comm.},
  issue_date = {January 2015},
@@ -33,9 +37,90 @@
  acmid = {2786995},
  publisher = {ACM},
  address = {New York, NY, USA},
-} 
+}
 
-[download] 
+@incollection{scherer2010evaluation,
+  title={Evaluation of pooling operations in convolutional architectures for object recognition},
+  author={Scherer, Dominik and M{\"u}ller, Andreas and Behnke, Sven},
+  booktitle={Artificial Neural Networks--ICANN 2010},
+  pages={92--101},
+  year={2010},
+  publisher={Springer}
+}
+
+@inproceedings{muller2014learning,
+  title={Learning depth-sensitive conditional random fields for semantic segmentation of rgb-d images},
+  author={M\"uller, Andreas and Behnke, Sven},
+  booktitle={Robotics and Automation (ICRA), 2014 IEEE International Conference on},
+  pages={6232--6237},
+  year={2014},
+  organization={IEEE}
+}
+@article{muller2012information,
+  title={Information Theoretic Clustering Using Minimum Spanning Trees},
+  author={M{\"u}ller, Andreas and Nowozin, Sebastian and Lampert, Christoph},
+  journal={Pattern Recognition},
+  pages={205--215},
+  year={2012},
+  publisher={Springer}
+}
+@article{schulz2010investigating,
+  title={Investigating convergence of restricted boltzmann machine learning},
+  author={Schulz, Hannes and M{\"u}ller, Andreas and Behnke, Sven},
+  journal={NIPS 2010 Workshop on Deep Learning and Unsupervised Feature Learning},
+  year={2010}
+}
+
+% software stuff
+@misc{andreas_mueller_2016_49909,
+  author       = {Andreas M\"uller and Forest Gregg and Vlad Niculae and Lars and Thorsten B. and Shuyang Sheng and Dmitry Kondrashkin and Joel Nothman and Eduardo Zamudio and Bart Janssen},
+  title        = {pystruct: 0.2.5.1},
+  month        = apr,
+  year         = 2016,
+  doi          = {10.5281/zenodo.49909},
+  url          = {http://dx.doi.org/10.5281/zenodo.49909}
+}
+@misc{andreas_mueller_2016_49915,
+  author       = {Andreas M\"uller and
+                  Giorgio Patrini and
+                  Alexander Ostrikov},
+  title        = {patsylearn: 0.1},
+  month        = apr,
+  year         = 2016,
+  doi          = {10.5281/zenodo.49915},
+  url          = {http://dx.doi.org/10.5281/zenodo.49915}
+}
+
+@misc{andreas_mueller_wordcloud,
+  author       = {Andreas M\"uller and
+                  wordcloud authors},
+  title        = {word_cloud: 1.2.1},
+  month        = feb,
+  year         = 2016,
+  doi          = {10.5281/zenodo.49907},
+  url          = {http://dx.doi.org/10.5281/zenodo.49907}
+}
+
+@misc{olivier_grisel_2016_49910,
+  author       = {Olivier Grisel and Andreas M\"uller and Fabian Pedregosa and Lars Buitinck and Alexandre Gramfort and Gilles Louppe and Peter Prettenhofer and Mathieu Blondel and Vlad Niculae and Arnaud Joly and Joel Nothman and Jake Vanderplas and Manoj Kumar and Robert Layton and Nelle Varoquaux and Noel Dawe and Johannes Sch\"onberger and Denis A. Engemann and Wei Li and Raghav R V and Clay Woolam and Kemal Eren and Eustache and Alexander Fabisch and Alexandre Passos and Virgile Fritsch},
+  title        = {scikit-learn 0.17.1},
+  month        = nov,
+  year         = 2015,
+  doi          = {10.5281/zenodo.49910},
+  url          = {http://dx.doi.org/10.5281/zenodo.49910}
+}
+
+@article{muller2014pystruct,
+  title={PyStruct: learning structured prediction in python},
+  author={M{\"u}ller, Andreas and Behnke, Sven},
+  journal={The Journal of Machine Learning Research},
+  volume={15},
+  number={1},
+  pages={2055--2060},
+  year={2014},
+  publisher={JMLR. org}
+}
+
 
 % automl
 @inproceedings{feurer-nips2015,
@@ -167,7 +252,7 @@ url = {http://papers.nips.cc/paper/4522-practical-bayesian-optimization-of-machi
 % uses
 @article{abraham2014machine,
   title={Machine learning for neuroimaging with scikit-learn},
-  author={Abraham, Alexandre and Pedregosa, Fabian and Eickenberg, Michael and Gervais, Philippe and Muller, Andreas and Kossaifi, Jean and Gramfort, Alexandre and Thirion, Bertrand and Varoquaux, G{\"a}el},
+  author={Abraham, Alexandre and Pedregosa, Fabian and Eickenberg, Michael and Gervais, Philippe and M\"uller, Andreas and Kossaifi, Jean and Gramfort, Alexandre and Thirion, Bertrand and Varoquaux, G{\"a}el},
   journal={arXiv preprint arXiv:1412.3919},
   year={2014}
 }
