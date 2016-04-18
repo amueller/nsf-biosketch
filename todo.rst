@@ -50,3 +50,13 @@ Randy Olson (?)
 ChrisFonnesbeck
 
 mention pystruct and wordcloud?
+
+
+
+todo:
+intro
+figures
+check length
+letters
+read over
+send out
