@@ -54,7 +54,9 @@ mention pystruct and wordcloud?
 
 
 todo:
-intro
+intro (doneish)
+fixmes
+add citations for use in medicine, sociology, physics
 figures
 check length
 letters

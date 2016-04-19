@@ -15,10 +15,10 @@
 \setcounter{section}{0}
 \section{Introduction}
 As sciences move towards more data driven research, data analysis has
-become a main building block of many research disciplines.
+become a main building block in many research disciplines.
 Many advances in recent research have been driven by algorithmic improvements
 in data analysis, in particular in predictive analytics and machine learning.
-[FIXME examples, cite?]
+% [FIXME examples, cite?]
 As machine learning becomes a tool for scientists across disciplines, it is
 important that this analytical tools are freely available, and easy to use for
 domain scientists outside of the field of machine learning.
@@ -50,18 +50,19 @@ regression, clustering and dimensionality reduction, as well as methods for feat
 selection and feature extraction. The library contains most of the algorithms included
 in standard textbooks like \textcite{bishop2001bishop} and
 \textcite{friedman2001elements}, while providing competitive implementation of
-state-of-the-art algorithms like Gradient Boosting, Random Forests and SAG
-FIXME\@.  In addition to a large selection of algorithms, \sklearn{} also
-contains a suite
+state-of-the-art algorithms like Gradient
+Boosting~\autocite{friedman2001greedy}, Random
+Forests~\autocite{breiman2001random} and SAG~\autocite{roux2012stochastic}.  In
+addition to a large selection of algorithms, \sklearn{} also contains a suite
 of evaluation metrics and tools for parameter selection.
 
 \emph{Documentation}
 Documentation is a key ingredient to usability, and the documentation of \sklearn{}
-has been widely recognized as a useful resource FIXME\@. The \sklearn{} project
+has been widely recognized as a useful resource. The \sklearn{} project
 has strict rules on documentation and requires examples and extensive descriptions
 for all algorithms.
 
-These features lead to a wide-spread use of \sklearn{}, and the FIXME of a large
+These features lead to a wide-spread use of \sklearn{}, and the creation of a large
 ecosystem of users, contributors, maintainers and dependent packages.
 
 \section{Previous impact of the \sklearn{} package}
@@ -69,8 +70,11 @@ The \sklearn{} project has been widely used in academic and industrial research,
 and has made its way into multiple commercial products. The
 paper~\autocite{pedregosa2011scikit} describing \sklearn{} has been cited 2746
 according to Google scholar. Applications of \sklearn{} spread
-a multitude of research areas, including Physics, Astronomy,
-Biology, Medicine, Psychology, Cyber Security, Oceanograpy, Sociology and more. FIXME add citations
+a multitude of research areas, including Physics, Astronomy~\autocite{pereira2013spectrophotometric, bennett20141},
+Biology~\autocite{misof2014phylogenomics, ritchie2014functional}, Medicine,
+Psychology~\autocite{park2015automatic,doehrmann2013predicting}, Cyber
+Security~\autocite{sahs2012machine},
+Oceanograpy~\autocite{sunagawa2015structure}, Sociology~\autocite{catalini2015incidence} and more.
 
 The number of 2746 is likely underestimating the use of \sklearn{} in published research, as a search for the
 term ``\sklearn{}'' yields 4850 results.
@@ -80,8 +84,10 @@ community interactions.
 According to the email addresses used for code contributions (a conservative
 estimate), 40 researchers and students from at least 23 US universities
 \emph{contributed code} to \sklearn{}, indicating wide-spread academic use.
-These institutes include Berkeley, Brown, CMU, Columbia, Duke, Harvard, MIT,
-NYU, Stanford, and University of Washington.
+These institutes include University of California Berkeley, Brown University,
+Carnegie Mellon University, Columbia University, Duke Univserity, Harvard
+University, Massechusetts Institute of Technology, New York University,
+Stanford University, and University of Washington.
 The total number of unique contributors to the project is about 700.
 
 The \sklearn{} mailing list has 1666 subscribers, including 70 email
@@ -162,11 +168,11 @@ for large scale studies of algorithms.
 The \sklearn{} machine learning library is an open source library for the
 Python programming language, distributed under a BSD license.
 It is developed largely by a community of volunteers, with some support from
-Inria FIXME, Telecom ParisTech and through PI M\"uller as part of the
-Moore-Sloan Data Science Environment at NYU\@.
+INRIA, Telecom ParisTech, Paris-Saclay Center for Data Science and through PI
+M\"uller as part of the Moore-Sloan Data Science Environment at NYU\@.
 The package was first released in 2010, and new releases are made semi-annually.
 The development team has 38 members, and releases and project management are
-coordinated between PI M\"uller and Olivier Grisel at FIXME\@.
+coordinated between PI M\"uller and Olivier Grisel at INRIA\@.
 There have been approximately 670 contributors to the project so far, demonstrating
 the wide community engagement, with each release typically including changes
 from 100 and 150 contributors.
@@ -189,8 +195,9 @@ The success of this approach can be seen in the large number of contributors to
 the project.
 
 \subsection{Interface and extensibility}
-The simple interface of \sklearn{} has received FIXME praise for its design and user-friendlyness.
-The main functionality of machine learning models can be summarized using just three functions:
+The simple interface of \sklearn{} has received numerous praise for its design
+and user-friendlyness.  The main functionality of machine learning models can
+be summarized using just three functions:
 
 fit for building models
 
@@ -235,11 +242,11 @@ Data Science courses are usually targeted at a broad spectrum
 of students with mixed backgrounds, providing them
 with the data analysis tools useful across domains.
 
-Courses using \sklearn{} have been taught at universities
-including NYU, Brown, Duke, Berkeley, Stanford, Princeton,
-Columbia, University of Pensilvania, Georgetown University, Cornell
-and others. FIXME names spelling / naming.
-
+Academic teaching has made use of \sklearn{} at institutes including New York
+University, Brown University, Duke University, University of California
+Berkeley, Stanford University, Princeton University, Columbia Univserity,
+University of Pensilvania, Georgetown University, Cornell University and
+others.
 
 \subsection{Reproducibility, democratization and openness}
 An important contribution of \sklearn{} has been in providing a common
@@ -268,11 +275,11 @@ The succinct interface of \sklearn{} also lends itself well to interactive
 data exploration and model building within the Jupyter Notebook environment.
 As mentioned previously, searching for Jupyter notebooks containing
 \sklearn{} code on the GitHub code hosting platform yields about 40000
-results. FIXME
+results.
 
 \section{Proposed Enhancements}
 While the \sklearn{} package is under constant development by a large community
-of volunteers, the size and widespread use FIXME of the package result in much of this
+of volunteers, the size and widespread adoption of the package result in much of this
 time being spend on maintenance and usability improvement, leaving little room
 for larger scale efforts to include major changes. The goal of this proposal
 is to implement major usability and automation features in \sklearn{}, decreasing
@@ -414,8 +421,10 @@ This will lead to better predictive results by simply changing two lines of code
 Lastly, by providing a reproducible and open large-scale comparison of machine learning
 methods on a wide variety of datasets, we provide guidance for future research
 in machine learning itself.
-In the tradition of FIXME and FIXME, we will identify strengths and weaknesses of existing
-models, to allow dissemination by the wider machine learning community.
+In the tradition of \textcite{caruana2006empirical} and
+\textcite{caruana2008empirical}, we will identify strengths and weaknesses of
+existing models, to allow dissemination by the wider machine learning
+community.
 
 \section{Community Engagement, Outreach, and Sustainability}
 \subsection{Community integration}
@@ -477,8 +486,9 @@ major changes based on volunteer efforts alone. New models that are added have o
 been the product of internships or the Google Summer of Code program.
 We therefore propose to hire a full time developer to greatly accelerate the progress
 in terms of usability and automation.
-Once these new features are included into the project, maintaining them via community
-efforts will not require additional resources. FIXME this argument needs to be way better.
+Once these new features are included into the project, maintaining them will be possible
+using the resources provided by the community. 
+% FIXME this argument needs to be way better.
 
 % GSOC somewhere? Broader impacts?
 
@@ -646,7 +656,7 @@ Providing more automatic model selection will drastically lower the barrier
 to entry to using machine learning for people without domain expertise
 in machine learning.
 Additionally, it will save time and effort spend by researchers doing
-model selection by hand, replacing their effort by an automated process FIXME CITE\@.
+model selection by hand, replacing their effort by an automated process.
 This will make researchers more productive, and will allow them to focus
 on their area of study.
 
@@ -664,7 +674,7 @@ research library enables us to reach out to a broad community of users.
 The prominent status of \sklearn{} enables us to influence
 the current make-up and values of the scientific open source ecosystem.
 We proposed to host ``coding sprints'' to introduce
-newcommers to contributing to open source and enlarging the
+outsiders to contributing to open source and enlarging the
 number of contributors even further. This event will be held collaboration with
 the New York based Women in Machine Learning and Data Science group, to grow
 the number of female contributors in particular. 
