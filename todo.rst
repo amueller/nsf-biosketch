@@ -55,10 +55,11 @@ mention pystruct and wordcloud?
 
 todo:
 intro (doneish)
-fixmes
+fixmes (doneish)
+read over
+integrate women sprints better
 add citations for use in medicine, sociology, physics
 figures
 check length
 letters
-read over
 send out

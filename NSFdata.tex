@@ -44,14 +44,14 @@ part of the created software will immediately be integrated in to the
 \sklearn{} project, other parts of the software will exist in a separate
 GitHub repository. The Research Engineer will also document all software and
 experimental protocols within the GitHub projects using the \texttt{sphinx}
-documentation generator, the standard tool in the python development community.
+documentation generator, the standard tool in the Python development community.
 The Research Engineer will implement automatic compilation of the documentation
 into a website that will be publicly available for all materials outside the \sklearn{}
 project. Materials contributed to the \sklearn{} project are automatically
 published on the \sklearn{} website via the \sklearn{} infrastructure.
 
 The research engineer will retrieve public machine learning data sets via the
-OpenML python API, perform the experiments, and upload the experimental results
+OpenML Python API, perform the experiments, and upload the experimental results
 to the OpenML platform. Large scale machine learning experiments will be
 performed using the NYU High
 Performance Computing clusters. The research engineer will also upload the
@@ -59,12 +59,12 @@ collective results of all experiments periodically to the figshare platform.
 
 \section{Types of data}
 
-The main output of this project will be python code, which will be recorded and
-shared and shared via GitHub. Documentation of experimental procedures and the
+The main output of this project will be Python code, which will be recorded and
+shared via GitHub. Documentation of experimental procedures and documentation of the
 source code will be contained in the same GitHub repository as the code.
 
 The project will make use of the public machine learning datasets hosted on the
-OpenML platform. We will use hundreds of the datasets hosted there, which will
+OpenML platform. We will use several hundred of the datasets hosted there, which will
 be downloaded via the Python API of OpenML\@. The datasets are stored as ARFF
 files, with the metadata stored as JSON\@. The Python API represents these
 together as Python objects.
@@ -72,7 +72,7 @@ together as Python objects.
 This data will be processed using a variety of algorithms from the \sklearn{}
 machine learning library, as well as methods that we will implement as part of
 the project. The result of the processing will be predictions made by machine
-learning algorithms and their accuracy and other evaluation metrics. The
+learning algorithms, their accuracy and other evaluation metrics. The
 metadata of these results consists of the original dataset, machine learning
 task, machine learning model that was used, and the parameters of the model.
 
@@ -80,7 +80,7 @@ These results and the metadata will be captured and uploaded by the OpenML
 Python API to the OpenML platform, which will store it as JSON\@. We will also
 separately store the collected results across many datasets and algorithms on
 figshare as JSON file. This will provide an  simple access mechanism as
-alternative to the OpenML interface for accessing the results. OpenML has
+alternative to the OpenML interface for obtaining the results. OpenML has
 programming interfaces in Java, R, Python, C\# and other languages that will
 allow processing of the results.
 
