@@ -25,7 +25,8 @@ domain scientists outside of the field of machine learning.
 
 % FIXME fast prototyping
 
-The \sklearn{} machine learning library~\autocite{pedregosa2011scikit}, for short \texttt{sklearn}, provides machine learning functunality
+The \sklearn{} machine learning library~\autocite{pedregosa2011scikit}, for
+short \texttt{sklearn}, provides machine learning functionality
 within the established --- but still growing --- scientific python ecosystem.
 \sklearn{} is an open source library written in Python, implementing state-of-the-art
 machine learning algorithm and utilities to apply these algorithms to real-world
@@ -85,15 +86,15 @@ According to the email addresses used for code contributions (a conservative
 estimate), 40 researchers and students from at least 23 US universities
 \emph{contributed code} to \sklearn{}, indicating wide-spread academic use.
 These institutes include University of California Berkeley, Brown University,
-Carnegie Mellon University, Columbia University, Duke Univserity, Harvard
-University, Massechusetts Institute of Technology, New York University,
+Carnegie Mellon University, Columbia University, Duke University, Harvard
+University, Massachusetts Institute of Technology, New York University,
 Stanford University, and University of Washington.
 The total number of unique contributors to the project is about 700.
 
 The \sklearn{} mailing list has 1666 subscribers, including 70 email
 addresses from ``edu'' domains, across 43 institutes.
 
-On the question-answering site Stackoverflow, there are around 4500 questions
+On the question-answering site Stack Overflow, there are around 4500 questions
 tagged as \sklearn{} related, with 222 questions asked within the last 30
 days of this writing.
 
@@ -112,13 +113,13 @@ RNA sequence analysis, \texttt{scikit-allel} for genetic variation data, and \te
 the \texttt{ROOT} scientific software framework.
 The main use of \sklearn{} is outside of these major open source packages, though,
 as stand alone library for data analysis. Using the GitHub repository, we found
-about 40.000 jupyter notebooks---a format for interactive computing with python---at the time of writing.
+about 40.000 Jupyter notebooks---a format for interactive computing with python---at the time of writing.
 
 The \sklearn{} website containing the documentation was visited by over
 230.000 users in March 2016, upward from 200.000 users in February and 180.000 users in January,
 reflecting the growth of the \sklearn{} user community.
 
-\sklearn{} has become so propular in teaching and data science applications that
+\sklearn{} has become so popular in teaching and data science applications that
 several books have been written about the use of
 \sklearn{}~\autocite{garreta2013learning, hackeling2014mastering,
 hauck2014scikit, raschka2015python}. Another book, titled ``Introduction to
@@ -244,8 +245,8 @@ with the data analysis tools useful across domains.
 
 Academic teaching has made use of \sklearn{} at institutes including New York
 University, Brown University, Duke University, University of California
-Berkeley, Stanford University, Princeton University, Columbia Univserity,
-University of Pensilvania, Georgetown University, Cornell University and
+Berkeley, Stanford University, Princeton University, Columbia University,
+University of Pennsylvania, Georgetown University, Cornell University and
 others.
 
 \subsection{Reproducibility, democratization and openness}
@@ -295,10 +296,10 @@ these parameters is grid-search with nested cross-validation.
 Grid-search describes the exhaustive search over all possible combinations
 of the parameters under consideration.
 A major hurdle in applying grid-search in practice is that algorithms
-often have many different tuning parameters, making exhausive search
+often have many different tuning parameters, making exhaustive search
 over all of them infeasible. However, in practice only a small subset
 of the parameters is usually critical for good performance. This set,
-and good candiate features are not usually well known and not included in text books.
+and good candidate features are not usually well known and not included in text books.
 The \sklearn{} documentation tries to give guidelines, but these can be hard
 to find and understand by people outside of machine learning.
 We propose the inclusion of a programmatic way to query for the parameters
@@ -314,12 +315,13 @@ of datasets, like OpenML~\autocite{van2013openml}.
 
 \subsection{Bayesian Optimization Based Parameter Selection}
 An alternative to exhaustive grid-search in selecting parameters is using
-Bayesian optimization to iteratively improve the tuning parameters of a model~\autocite{NIPS2011_4443, shahriari2016taking, NIPS2012_4522}.
-This technique has been well-established in the machine learning literature,
-and there are several implementations available.~\autocite{bergstra2013hyperopt, feurer-nips2015, komer2014hyperopt, snoek2015scalable}.
-However, these algorithms have not made its way into the software used by
-domain scientists that use machine machine learning algorithms as tools in
-their research.
+Bayesian optimization to iteratively improve the tuning parameters of a
+model~\autocite{NIPS2011_4443, shahriari2016taking, NIPS2012_4522}.  This
+technique has been well-established in the machine learning literature, and
+there are several implementations available.~\autocite{bergstra2013hyperopt,
+feurer-nips2015, komer2014hyperopt, snoek2015scalable}.  However, these
+algorithms have not made its way into the software used by domain scientists
+that use machine machine learning algorithms as tools in their research.
 By incorporating a robust and efficient implementation into \sklearn{},
 this proposal will bring the benefits of the recent advantages in model selection
 from the machine learning community to the scientific users of \sklearn{}.
@@ -522,7 +524,7 @@ collaboration. The timeline of the project is illustrated in Figure~\ref{timelin
     \gantttitlecalendar[title/.style={draw=none, fill=none}]{year}\\
     \gantttitlecalendar[title/.append style={fill=black!10}, title label font=\tiny\color{black!10}]{year}\\
     \ganttbar{1 Benchmark parameter ranges}{2016-11}{2017-04} \\
-    \ganttbar{2 Provide devault ranges}{2017-05}{2018-4} \\
+    \ganttbar{2 Provide default ranges}{2017-05}{2018-4} \\
     \ganttbar{3 GP-base BO}{2016-11}{2017-10} \\
     \ganttbar{4 RF-based BO}{2017-05}{2017-10} \\
     \ganttbar{5 Integrate with \texttt{auto-sklearn} BO}{2017-11}{2018-10} \\
@@ -530,7 +532,7 @@ collaboration. The timeline of the project is illustrated in Figure~\ref{timelin
     \ganttbar{7 Transformation conditions}{2016-11}{2017-04} \\
     \ganttbar{8 Integrate conditions in sklearn}{2017-05}{2017-10} \\
     \ganttbar{9 Feature encodings in sklearn}{2017-11}{2018-10} \\
-    \ganttbar{10 Sklearn $\leftrightarrow$ \texttt{auto-sklearn} sync}{2017-11}{2018-10} \\
+    \ganttbar{10 sklearn $\leftrightarrow$ \texttt{auto-sklearn} sync}{2017-11}{2018-10} \\
     \ganttbar{11 Benchmark meta-learning}{2017-05}{2018-04} \\
     \ganttbar{12 Meta-learning packaging}{2018-11}{2019-10}
     %\ganttlinkedbar{Task 2}{3}{7} \ganttnewline
@@ -572,7 +574,7 @@ the number of papers actually using the \sklearn{} library in their research.
 To get a more comprehensive picture of the adoption of an open source software
 package, we can look at the citation and download counts together with other
 statistics, like the number of discussions on the question answering site
-stackoverflow, the number of contributors, the number of people writing to the
+Stack Overflow, the number of contributors, the number of people writing to the
 mailing list, the number of projects depending on the package etc.  These
 numbers are particularly meaningful when compared to other projects with a
 similar scope.
