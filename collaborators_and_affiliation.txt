@@ -1,0 +1,30 @@
+Schulz, Hannes
+Scherer, Dominic
+
+Buitinck, Lars
+Louppe, Gilles
+Blondel, Mathieu
+Pedregosa, Fabian 
+Grisel, Olivier 
+Niculae, Vlad 
+Prettenhofer, Peter 
+Grobler, Jaques 
+Layton, Robert 
+Vanderplas, Jake 
+Joly, Arnaud 
+Holt, Brian 
+Varoquaux, Gaël 
+Abraham, Alexandre 
+Eickenberg, Michael 
+Gervais, Philippe 
+Kossaifi, Jean 
+Gramfort, Alexandre 
+Thirion, Bertrand 
+
+Nowozin, Sebastian 
+Lampert, Christoph 
+Rother, Carsten 
+
+Guido, Sarah
+
+Behnke, Sven
