@@ -1,30 +1,29 @@
-Schulz, Hannes
-Scherer, Dominic
+Schulz, Hannes  (Maluuba)
+Scherer, Dominic (unknown)
 
-Buitinck, Lars
-Louppe, Gilles
-Blondel, Mathieu
-Pedregosa, Fabian 
-Grisel, Olivier 
-Niculae, Vlad 
-Prettenhofer, Peter 
-Grobler, Jaques 
-Layton, Robert 
-Vanderplas, Jake 
-Joly, Arnaud 
-Holt, Brian 
-Varoquaux, Gaël 
-Abraham, Alexandre 
-Eickenberg, Michael 
-Gervais, Philippe 
-Kossaifi, Jean 
-Gramfort, Alexandre 
-Thirion, Bertrand 
+Buitinck, Lars (Netherlands eScience Center)
+Louppe, Gilles (NYU)
+Blondel, Mathieu (NTT Communication Science Laboratories)
+Pedregosa, Fabian (Université Paris-Dauphine)
+Grisel, Olivier (INRIA)
+Niculae, Vlad (Cornell University)
+Prettenhofer, Peter (Datarobot)
+Grobler, Jaques (Energy Partners)
+Layton, Robert (dataPipeline)
+Vanderplas, Jake (University of Washington)
+Joly, Arnaud (University of Liège)
+Holt, Brian (Samsung Research UK)
+Varoquaux, Gaël (INRIA)
+Abraham, Alexandre (Telecom ParisTech)
+Eickenberg, Michael (INRIA)
+Gervais, Philippe (INRIA)
+Kossaifi, Jean (Imperial College London)
+Thirion, Bertrand (INRIA)
 
-Nowozin, Sebastian 
-Lampert, Christoph 
-Rother, Carsten 
+Nowozin, Sebastian (Microsoft Research Cambridge)
+Lampert, Christoph (IST Austria)
+Rother, Carsten  (TU Dresden)
 
-Guido, Sarah
+Guido, Sarah (Bitly)
 
-Behnke, Sven
+Behnke, Sven (Univserity of Bonn)
