@@ -1,12 +1,12 @@
 figures:
-code for classifier
-code for grid search
-timeline of project
-table for API
+code for classifier (done)
+code for grid search (done)
+timeline of project (done)
+table for API (done)
 pipeline?
 scikit-learn website traffic
 cool colorful plot?
-GP illustration
+GP illustration (nope)
 
 resources
 =================
@@ -52,14 +52,13 @@ ChrisFonnesbeck
 mention pystruct and wordcloud?
 
 
-
 todo:
 intro (doneish)
 fixmes (doneish)
-read over
-integrate women sprints better
-add citations for use in medicine, sociology, physics
-figures
-check length
-letters
+read over (done)
+integrate women sprints better (done)
+add citations for use in medicine, sociology, physics (done)
+figures (mostly done)
+check length (okish)
+letters (okish)
 send out
