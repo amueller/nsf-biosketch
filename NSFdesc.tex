@@ -61,7 +61,7 @@ of evaluation metrics and tools for parameter selection.
 \emph{\textbf{Documentation}}
 Documentation is a key ingredient to usability, and the documentation of \sklearn{}
 has been widely recognized as an excellent learning
-resource~\textcite{testimonials, benlorica, kdnuggetstopten, lovesklearn}. The
+resource~\autocite{testimonials, benlorica, kdnuggetstopten, lovesklearn}. The
 \sklearn{} project has strict rules on documentation and requires examples and
 extensive descriptions for all algorithms.
 
@@ -69,13 +69,35 @@ These key features are the ingredients leading to the wide-spread use of
 \sklearn{}, and the creation of a large ecosystem of users, contributors,
 maintainers and dependent packages.
 
+\begin{table}
+    \caption{Main \sklearn interface. All models have a \texttt{fit} method
+    with the training data as parameter. Supervised models are also provided
+    with the training targets or labels. New (usually multivariate)
+    representations of the input data are produced by the \texttt{transform}
+    method, while prediction of target variables (usually discrete labels or
+    single continuous variables) or cluster memberships are produced with the
+    \texttt{predict} method.
+}
+\begin{center}
+    \begin{tabular}{p{.3\textwidth} p{.3\textwidth}}
+    \multicolumn{2}{c}{\texttt{fit(features\_train, [labels\_train])}}\\\\
+    \texttt{predict(features\_test)} & \texttt{transform(features\_test)}\\
+    \cmidrule[1pt](r{1em}){1-1} \cmidrule[1pt](l){2-2}
+    Classification & Preprocessing\\
+    Regression & Dimensionality Reduction\\
+    Clustering & Feature Selection\\
+               & Feature extraction\\
+\end{tabular}
+\end{center}
+\end{table}
+
 \section{Previous impact of the \sklearn{} package}
 The \sklearn{} project has been widely used in academic and industrial research,
 and has made its way into multiple commercial products. The
 paper~\autocite{pedregosa2011scikit} describing \sklearn{} has been cited over 2750 times
 according to Google scholar\footnote{We noticed that the number of citations
 according to google scholar goes up at a rate of roughly 5 citations per day
-during writing this proposal}. Applications of \sklearn{} spread
+during writing this proposal.}. Applications of \sklearn{} spread
 a multitude of research areas, including Physics, Astronomy~\autocite{pereira2013spectrophotometric, bennett20141},
 Biology~\autocite{misof2014phylogenomics, ritchie2014functional}, Medicine,
 Psychology~\autocite{park2015automatic,doehrmann2013predicting}, Cyber
@@ -149,8 +171,7 @@ using recent developments in model selection and meta-learning.
 Funding form this proposal would enable a concentrated effort to include more
 automatic model selection in \sklearn{}, and therefore lower the barrier to
 entry for applying machine learning even further.
-
-The components of the proposed work are
+The components of the proposed work are:
 \begin{itemize}
     \item Improving the existing pipelining facilities for more automatic feature extraction.
     \item Recommend explicit sets of parameters to tune for each algorithm,
@@ -277,7 +298,7 @@ SPSS or Stata.
 
 \subsection{Integration in scientific Python ecosystem}
 \sklearn{} is firmly rooted in the scientific Python ecosystem, and has been
-one of the catalysts of its success~\textcite{benlorica, infoworld}. \sklearn{}
+one of the catalysts of its success~\autocite{benlorica, infoworld}. \sklearn{}
 builds heavily on the foundations on \texttt{NumPy} and \texttt{SciPy}, and
 integrates easily with the popular pandas library for data analysis and the
 \texttt{matplotlib} library for plotting and visualization.
@@ -290,6 +311,30 @@ data exploration and model building within the Jupyter Notebook environment.
 As mentioned previously, searching for Jupyter notebooks containing
 \sklearn{} code on the GitHub code hosting platform yields about 40000
 results.
+
+\begin{figure}
+    \begin{minted}{python}
+    # model fitting and prediction with fixed parameters:
+    from sklearn.ensembled import RandomForestClassifier
+    forest  = RandomForestClassifier(max_depth=10, max_features=3)
+    forest.fit(features_train, labels_train)
+    forest.predict(features_test)
+
+    # model fitting and prediction with grid-searched parameters
+    from sklearn.model_selection import GridSearchCV
+    parameter_grid = {'max_depth': [1, 3, 10], 'max_features': [1, 2, 3]}
+    forest_grid = GridSearchCV(RandomForestClassifier(), parameter_grid)
+    forest_grid.fit(features_train, labels_train)
+    forest_grid.predict(features_test)
+    \end{minted}
+    \vspace{-5mm}
+    \label{gridsearch}
+    \caption{Current interface to scikit-learn classification and parameter
+        selection. The user needs to select parameters of importance (here
+        \texttt{max\_depth} and \texttt{max\_features}), and values for these
+        parameters to test (here 1, 3, 10 for \texttt{max\_depth} and 1, 2, 3
+        for \texttt{max\_features}).}
+\end{figure}
 
 \section{Proposed Enhancements}
 While the \sklearn{} package is under constant development by a large community
@@ -307,7 +352,8 @@ Nearly all machine learning models come with parameters to set or tune
 to achieve good predictive performance. The most wide-spread way to adjust
 these parameters is grid-search with nested cross-validation.
 Grid-search consists of an exhaustive search over all possible combinations
-of the parameters under consideration.
+of the parameters under consideration. Example code for the process is given
+in Figure~\ref{gridsearch}.
 A major hurdle in applying grid-search in practice is that algorithms
 often have many different tuning parameters, making exhaustive search
 over all of them infeasible. However, in practice only a small subset
@@ -368,6 +414,19 @@ as requirements for sparse data, dense data, non-negativity of features and othe
         continuous data in a \sklearn{} compatible way.
 \end{labeling}
 
+\begin{figure}
+    \begin{center}
+    \includegraphics[width=.5\linewidth]{meta-learning-diagram.pdf}
+    \end{center}
+    \caption{Illustration of meta-learning. First, good parameter values for
+        each training dataset are found using optimization. Each dataset is
+        then represented via meta-features. A Machine learning model is learned
+        to predict parameter settings from the meta-features. For a new
+        dataset, the machine learning model can be used to find good
+    parameters, removing the costly optimization step.}
+    \label{meta-learning}
+\end{figure}
+
 \subsection{Meta-Learning}
 Going beyond brute-force search or even Bayesian optimization for parameter and
 model selection, it is possible to use machine learning to recommend suitable
@@ -378,7 +437,8 @@ Given these meta-features and the best pipeline and parameters found using
 Bayesian optimization or grid-search, it is then possible to build a machine
 learning model to predict what the best classifier for a new dataset would be.
 This prediction based on meta-features is computationally much less demanding
-than searching for a model and parameters from scratch for each new dataset.
+than searching for a model and parameters from scratch for each new dataset. The process
+is illustrated in Figure~\ref{meta-learning}
 Meta-learning allows the principled incorporation of expert knowledge as encoded
 in the collection of datasets used for training.
 While there are working implementations of meta-learning available
@@ -488,7 +548,7 @@ basis, so that the documentation website (for the development version) is always
 with the current code.
 \sklearn{} has a history of increasingly high standards for documentation,
 requiring a description of algorithms, use cases, important parameters and theory,
-as well as compelling examples~\textcite{lovesklearn, benlorica}. This culture of comprehensive and accessible documentation
+as well as compelling examples~\autocite{lovesklearn, benlorica}. This culture of comprehensive and accessible documentation
 will carry over to any additions made as part of this proposal.
 
 \subsection{Sustainability Plan}
@@ -526,7 +586,7 @@ to engage more female developers.
 We plan a weekend-long workshop, which will give a short introduction to
 contributing to open source, followed by two days of hands-on contributions to
 \sklearn{}.
-From prior experience~\textcite{meetupsprintSF}, it is possible for new
+From prior experience~\autocite{meetupsprintSF}, it is possible for new
 contributors to make meaningful changes within one or two days, so that
 attendants will go home with a contribution in the project. After pioneering
 this model with \sklearn{}, our goal it to engage with other open source
