@@ -28,15 +28,15 @@ documentation~\autocite{Varoquaux_2015, benlorica}.
 learning, mainly consisting of only three methods: \texttt{fit}, to build
 models, \texttt{predict}, to make predictions using models, and
 \texttt{transform}, to change the representation of the input
-data~\autocite{buitinck2013api}.  The interface is illustrated in
-Table~\ref{api} and Figure~\ref{grid_search}.  This simple and consistent
-interface helps to abstract away the algorithm, and let users focus on their
-particular problem. It also allows replacing an algorithm by another by
-changing a single line of code. \sklearn{} makes use of the well-established
-NumPy library to represent data and predictions.  NumPy is used across domains
-for numeric computations, and integrating this generic representation into
-\sklearn{} minimizes the friction of applying machine learning within an
-existing project.
+data~\autocite{buitinck2013api}.
+Table~\ref{api} and Figure~\ref{grid_search} illustrate this interface. The
+simple and consistent interface helps to abstract away the algorithm, and let
+users focus on their particular problem. It also allows replacing an algorithm
+by another by changing a single line of code. \sklearn{} makes use of the
+well-established NumPy library to represent data and predictions.  NumPy is
+used across domains for numeric computations, and integrating this generic
+representation into \sklearn{} minimizes the friction of applying machine
+learning within an existing project.
 
 \emph{\textbf{Comprehensiveness}} \sklearn{} implements a wide variety of
 models for classification, regression, clustering and dimensionality reduction,
@@ -455,8 +455,8 @@ Given these meta-features and the best pipeline and parameters found using
 Bayesian optimization or grid-search, it is then possible to build a machine
 learning model to predict what the best classifier for a new dataset would be.
 This prediction based on meta-features is computationally much less demanding
-than searching for a model and parameters from scratch for each new dataset. The process
-is illustrated in Figure~\ref{meta-learning}
+than searching for a model and parameters from scratch for each new dataset.
+Figure~\ref{meta-learning} illustrates the process.
 Meta-learning allows the principled incorporation of expert knowledge as encoded
 in the collection of datasets used for training.
 While there are working implementations of meta-learning available
@@ -628,8 +628,7 @@ benchmarking experiments to validate the effectiveness of the parameter
 recommendations and the automation features.  The PI and developer will both
 interact with the greater community via issue trackers, mailing lists and
 chat rooms. The developer and PI will share working space to aid close
-collaboration. The timeline of the project is illustrated in Figure~\ref{timeline}
-
+collaboration. Figure~\ref{timeline} illustrates the timeline of the project.
 \begin{figure}
     \begin{ganttchart}[
     hgrid,
