@@ -186,8 +186,15 @@ be optimum, and they could obtain a much better model using more expert knowledg
 in machine learning to answer the questions listed above.
 However, the need for this expert knowledge can be eliminated at least partially
 using recent developments in model selection and
-meta-learning~\cite{bergstra2013hyperopt, NIPS2011_4443,
-feurer-nips2015, snoek2015scalable, NIPS2012_4522}.
+meta-learning~\autocite{NIPS2011_4443, feurer-nips2015,
+snoek2015scalable, NIPS2012_4522}. While there exist attempts at
+open source implementation for automatic model and parameter
+selection~\autocite{bergstra2013hyperopt, komer2014hyperopt,
+NIPS2012_4522, hutter2011sequential} and
+meta-learning~\autocite{feurer-nips2015}, these implementation are
+in the form of research prototypes that lack in terms of usability,
+documentation, testing and integration into the existing
+ecosystem.
 
 Funding from this proposal would enable a concentrated effort to include more
 automatic model selection in \sklearn{}, and therefore lower the barrier to
@@ -203,6 +210,9 @@ The components of the proposed work are:
 Together, these additions to the \sklearn{} ecosystem will enable more widespread use,
 in particular by scientists outside of the field of machine learning, and improve results
 of existing users.
+Our goal is to improve the existing infrastructure for model selection in
+\sklearn{}, and develop more novel features like meta-learning outside of the main
+\sklearn{} package, for possible later inclusion.
 
 \section{Intellectual Merit}
 Improving automation in model selection and preprocessing in \sklearn{} will have far-reaching
@@ -358,10 +368,7 @@ results.
 \end{figure}
 
 \section{Proposed Enhancements}
-While the \sklearn{} package is under constant development by a large community
-of volunteers, the size and widespread adoption of the package result in much of this
-time being spend on maintenance and usability improvement, leaving little room
-for larger scale efforts to include major changes. The goal of this proposal
+The goal of this proposal
 is to implement major usability and automation features in \sklearn{}, decreasing
 the domain expertise required to successfully implement machine learning models.
 We propose to improve three aspects of applying machine learning models that
@@ -388,7 +395,8 @@ to adjust for each model, and what good parameter ranges are.
 
 While there is some community consensus on this issue, we want to back
 up our choices by large scale experiments on existing benchmark libraries
-of datasets, like OpenML~\autocite{van2013openml}.
+of datasets, like OpenML~\autocite{van2013openml}. These enhancements will
+be included directly in the \sklearn{} package.
 \begin{labeling}{Task 1}
     \item [Task 1] Benchmark parameter ranges of commonly used supervised models.
     \item [Task 2] Provide default parameter ranges inside \sklearn{}.
@@ -434,6 +442,7 @@ as requirements for sparse data, dense data, non-negativity of features and othe
     \item [Task 9] Collect common encoding schemes for categorical and
         continuous data in a \sklearn{} compatible way.
 \end{labeling}
+Tasks 6-8 will be additions to \sklearn{}, while Task 9 might be developed in a separate package.
 
 \begin{figure}
     \begin{center}
@@ -468,7 +477,9 @@ these projects are currently in a ``research software'' state. Making these meth
 available to the wider scientific audience will require substantial engineering
 efforts. The above steps of incorporating Bayesian optimization and automatic
 preprocessing selection will lay the foundation to enable meta-learning within the
-\sklearn{} framework.
+\sklearn{} framework. These additions will likely not be included in the main
+\sklearn{} package within the scope of this proposal, but will be made available
+as an additional package, compatible with and extending \sklearn{} functionality.
 \begin{labeling}{Task 10}
     \item [Task 10] Refactor \texttt{auto-sklearn} to make use of new pipeline and transformation conditions.
     \item [Task 11] Benchmark meta-learning features on OpenML datasets.

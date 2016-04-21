@@ -68,10 +68,3 @@ send out
 heiko:
 what changes from a user point of view: add listing
 automatic model selection further up
-
-remove sentence "all the time is spent on maintenance"
-
-will stuff be in scikit-learn from the beginning clear.
-
-add to beginning that there are open source packages available (spearmint,
-hyperopt, hyperopt-sklearn, auto-sklearn)
