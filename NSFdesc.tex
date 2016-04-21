@@ -19,7 +19,7 @@ growing---scientific Python ecosystem~\autocite{benlorica, infoworld}.
 state-of-the-art machine
 learning algorithm and utilities to apply these algorithms to real-world data
 analysis and prediction problems.
-
+%
 The distinguishing features of \sklearn{} are its generic and intuitive
 interface, its comprehensiveness and its
 documentation~\autocite{Varoquaux_2015, benlorica}.
@@ -103,8 +103,6 @@ Security~\autocite{sahs2012machine},
 Oceanograpy~\autocite{sunagawa2015structure}, Social
 Sciences~\autocite{driscoll2015searching, croicu2015improving} and more.
 
-The number of 2750 is likely underestimating the use of \sklearn{} in published
-research, as software is often mentioned only as a footnote.
 Other ways to measure the use and impact of \sklearn{} is the engagement with
 the project via code contributions, downloads, support requests and other
 community interactions.
@@ -256,6 +254,7 @@ recognition for its user friendly design~\cite{benlorica, testimonials}.
 The main functionality of machine learning models can
 be summarized using just three functions (see Table~\ref{api}):
 \begin{labeling}{\texttt{transform}}
+    \itemsep-4pt
     \item[\texttt{fit}] for building models
     \item[\texttt{predict}] for creating predictions
     \item[\texttt{transform}] for generating new representations.
@@ -333,7 +332,7 @@ As mentioned previously, searching for Jupyter notebooks containing
 results.
 
 \begin{figure}
-    \begin{minted}{python}
+    \begin{minted}[fontsize=\footnotesize]{python}
     # model fitting and prediction with fixed parameters:
     from sklearn.ensembled import RandomForestClassifier
     forest  = RandomForestClassifier(max_depth=10, max_features=3)
@@ -346,6 +345,15 @@ results.
     forest_grid = GridSearchCV(RandomForestClassifier(), parameter_grid)
     forest_grid.fit(features_train, labels_train)
     forest_grid.predict(features_test)
+
+    # grid-search with pipeline of feature selection, pca and random forest
+    from sklearn.pipeline import Pipeline
+    pipeline = pipeline([('select', SelectPercentile()), ('pca', PCA()),
+                         ('rf', RandomForestClassifier())])
+    parameter_grid = {'select__percentile': [10, 50, 90],
+                      'rf__max_depth': [1, 3, 10], 'rf__max_features': [1, 2, 3]}
+    grid = GridSearchCV(pipeline, parameter_grid)
+    ... 
     \end{minted}
     \vspace{-5mm}
     \label{gridsearch}
@@ -353,10 +361,12 @@ results.
         selection. The user needs to select parameters of importance (here
         \texttt{max\_depth} and \texttt{max\_features}), and values for these
         parameters to test (here 1, 3, 10 for \texttt{max\_depth} and 1, 2, 3
-        for \texttt{max\_features}).}
+        for \texttt{max\_features}). Building more complex pipelines comprising
+        multiple steps of feature processing compicates the process.}
 \end{figure}
 
 \section{Proposed Enhancements}
+\enlargethispage{\baselineskip}
 The goal of this proposal
 is to implement major usability and automation features in \sklearn{}, decreasing
 the domain expertise required to successfully implement machine learning models.
@@ -387,6 +397,7 @@ up our choices by large scale experiments on existing benchmark libraries
 of datasets, like OpenML~\autocite{van2013openml}. These enhancements will
 be included directly in the \sklearn{} package.
 \begin{labeling}{Task 1}
+    \itemsep-4pt
     \item [Task 1] Benchmark parameter ranges of commonly used supervised models.
     \item [Task 2] Provide default parameter ranges inside \sklearn{}.
 \end{labeling}
@@ -404,6 +415,7 @@ By incorporating a robust and efficient implementation into \sklearn{},
 this proposal will bring the benefits of the recent advantages in model selection
 from the machine learning community to the scientific users of \sklearn{}.
 \begin{labeling}{Task 3}
+    \itemsep-4pt
     \item [Task 3] Benchmark and integrate Gaussian Process based parameter optimization.
     \item [Task 4] Benchmark Random Forest based parameter optimization.
     \item [Task 5] Integrate \texttt{auto-sklearn} Bayesian optimization with \sklearn{}.
@@ -421,17 +433,18 @@ automatic process to compare different pipeline constructions, even though
 the right combination of methods is often crucial but not obvious in practice.
 We propose to extend the model selection and pipelining framework in \sklearn{}
 to allow automatic selection of pipeline steps.
+\enlargethispage{\baselineskip}
 To help automatic preprocessing selection, we will also programatically
 define input and output conditions of different processing steps, such
 as requirements for sparse data, dense data, non-negativity of features and others.
 \begin{labeling}{Task 9}
+    \itemsep-4pt
     \item [Task 6] Allow setting of pipeline steps in \sklearn{} parameter searches.
     \item [Task 7] Implement tagging of pre-conditions and post-conditions for data transformations.
     \item [Task 8] Refactor \sklearn{} testing to validate pre-condition and post-condition tags.
     \item [Task 9] Collect common encoding schemes for categorical and
         continuous data in a \sklearn{} compatible way.
 \end{labeling}
-Tasks 6-8 will be additions to \sklearn{}, while Task 9 might be developed in a separate package.
 
 \begin{SCfigure}
     \centering
@@ -469,13 +482,48 @@ meta-learning within the
 \sklearn{} framework. These additions will likely not be included in the main
 \sklearn{} package within the scope of this proposal, but will be made available
 as an additional package, compatible with and extending \sklearn{} functionality.
+An illustration of the proposed additions is shown in Figure~\ref{additions_interface}.
 \begin{labeling}{Task 10}
+    \itemsep-4pt
     \item [Task 10] Refactor \texttt{auto-sklearn} to make use of new pipeline and transformation conditions.
     \item [Task 11] Benchmark meta-learning features on OpenML datasets.
     \item [Task 12] Create meta-learning package from the previously build
         components, with full user documentation and test coverage that is
         installable via the Python package manager.
 \end{labeling}
+
+\begin{figure}
+    \begin{minted}[fontsize=\footnotesize]{python}
+    # model selection with default ranges
+    from sklearn.model_selection import GridSearchCV, default_grid
+    forest = RandomForestClassifier()
+    forest_grid = GridSearchCV(RandomForestClassifier(), default_grid[forest])
+    ... 
+    # Bayesian optimization is an alternative to grid-search:
+    from sklearn.model_selection import BayesianSearchCV
+    BayesianSearchCV(RandomForestClassifier())
+    ... 
+    # allowing searches over pipeline steps
+    from sklearn.model_selection import AutoPipeline
+    pipe = AutoPipeline(RandomForestClassifier())
+    BayesianSearchCV(pipe)
+    ... 
+    # meta-learning removes need to specify model or ranges:
+    from metalearning import AutoClassifier
+    classifier = AutoClassifier()
+    classifier.fit(features_train, labels_train)
+    ... 
+    \end{minted}
+    \vspace{-5mm}
+    \label{additions_interface}
+    \caption{Illustration of some of the proposed additions to the current
+        \sklearn{} API\@. The \texttt{default\_grid} contains important parameters
+        and ranges. \texttt{BayesianSearchCV} replaces the exhaustive search in
+        \texttt{GridSearchCV} with Bayesian optimization. \texttt{AutoPipeline}
+        searches over preprocessing steps, removes the need for users to
+        specify them explicitly. Finally, \texttt{AutoClassifier} takes care of
+        preprocessing and model selection via meta-learning.}
+\end{figure}
 
 \section{Enabled Research Opportunities}
 The proposed project will benefit researchers inside the machine learning field,
@@ -768,17 +816,17 @@ software products. They will use the improvements and packages in their
 research projects, and provide valuable feedback for ensuring usefulness of the
 software for a variety of research applications:
 
-\subsubsection{Experimental Particle Physics}
+\paragraph{Experimental Particle Physics}
 Prof. Kyle Cranmer (NYU) committed to have his group be an early adopter of the
 proposed project for their work on searching new phenomena at the Large Hardron
 Collider.
 
-\subsubsection{Astronomy}
+\paragraph{Astronomy}
 Prof. David Hogg (NYU) committed to have his group be an
 early adopter of the proposed project for his work on analyizing
 telescope imaging data.
 
-\subsubsection{Medical Data Analysis}
+\paragraph{Medical Data Analysis}
 Prof. David Sontag (NYU) commited to
 have his group be an early adopter of the proposed project for their
 work on building risk stratification algorithms.
@@ -794,7 +842,7 @@ the type of data to include in the model, and different ways of
 deriving features from the data, which could potentially be automated
 using the software described in this proposal.
 
-\subsubsection{Biostatistics}
+\paragraph{Biostatistics}
 Prof. Christopher Fonnesbeck (Vanderbilt
 University) commited to be an early adopter of the proposed project in
 his work in statistical of biomedical data in epidemiological
