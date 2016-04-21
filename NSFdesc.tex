@@ -96,7 +96,7 @@ maintainers and dependent packages.
 \end{center}
 \label{api}
 \end{table}
-\pagebreak
+%\pagebreak
 
 \section{Previous impact of the \sklearn{} package}
 The \sklearn{} project has been widely used in academic and industrial research,
@@ -444,10 +444,9 @@ as requirements for sparse data, dense data, non-negativity of features and othe
 \end{labeling}
 Tasks 6-8 will be additions to \sklearn{}, while Task 9 might be developed in a separate package.
 
-\begin{figure}
-    \begin{center}
+\begin{SCfigure}
+    \centering
     \includegraphics[width=.6\linewidth]{meta-learning-diagram.pdf}
-    \end{center}
     \caption{Illustration of meta-learning. First, good parameter values for
         each training dataset are found using optimization. Each dataset is
         then represented via meta-features. A Machine learning model is learned
@@ -455,7 +454,7 @@ Tasks 6-8 will be additions to \sklearn{}, while Task 9 might be developed in a 
         dataset, the machine learning model can be used to find good
     parameters, removing the costly optimization step.}
     \label{meta-learning}
-\end{figure}
+\end{SCfigure}
 
 \subsection{Meta-Learning}
 Going beyond brute-force search or even Bayesian optimization for parameter and
@@ -672,6 +671,7 @@ collaboration. The timeline of the project is illustrated in Figure~\ref{timelin
     %\ganttlinkedbar{Task 2}{3}{7} \ganttnewline
     %\ganttbar{Final Task}{8}{12}
     \end{ganttchart}
+    \vspace{-5mm}
     \caption{Project timeline}%
 \label{timeline}
 \end{figure}
@@ -779,35 +779,39 @@ software products. They will use the improvements and packages in their
 research projects, and provide valuable feedback for ensuring usefulness of the
 software for a variety of research applications:
 
-\begin{labeling}{\textbf{Experimental Particle Physics}}
-    \item[\textbf{Experimental Particle Physics}] Prof. Kyle Cranmer (NYU)
-        committed to have his group be an early adopter of the proposed project
-        for their work on searching new phenomena at the Large Hardron
-        Collider.
-    \item[\textbf{Astronomy}] Prof. David Hogg (NYU) committed to have his group be an
-        early adopter of the proposed project for his work on analyizing
-        telescope imaging data.
-    \item[\textbf{Medical data analysis}] Prof. David Sontag (NYU) commited to
-        have his group be an early adopter of the proposed project for their
-        work on building risk stratification algorithms.
-        In their recent work~\autocite{razavian2015population} 
-        built an algorithm to detect whether an individual is likely to
-        develop Type 2 diabetes in the next 2 years, to provide early
-        detection. Early detection allows the patient and their clinical team
-        to perform interventions such lifestyle changes and medication on
-        Metformin which are proven to significantly decrease long-term
-        complications of diabetes. Building their models involves
-        a significant amount of iteration over approaches to regularization,
-        the type of data to include in the model, and different ways of
-        deriving features from the data, which could potentially be automated
-        using the software described in this proposal.
-    \item[\textbf{Biostatistics}] Prof. Christopher Fonnesbeck (Vanderbilt
-        University) commited to be an early adopter of the proposed project in
-        his work in statistical of biomedical data in epidemiological
-        applications, such as the control of infectious disease. This work
-        includes building of classification and regression models for
-        meta-analysis, with the goal if supporting evidence-based medicine.
-\end{labeling}
+\subsubsection{Experimental Particle Physics}
+Prof. Kyle Cranmer (NYU) committed to have his group be an early adopter of the
+proposed project for their work on searching new phenomena at the Large Hardron
+Collider.
+
+\subsubsection{Astronomy}
+Prof. David Hogg (NYU) committed to have his group be an
+early adopter of the proposed project for his work on analyizing
+telescope imaging data.
+
+\subsubsection{Medical data analysis}
+Prof. David Sontag (NYU) commited to
+have his group be an early adopter of the proposed project for their
+work on building risk stratification algorithms.
+In their recent work~\autocite{razavian2015population} 
+built an algorithm to detect whether an individual is likely to
+develop Type 2 diabetes in the next 2 years, to provide early
+detection. Early detection allows the patient and their clinical team
+to perform interventions such lifestyle changes and medication on
+Metformin which are proven to significantly decrease long-term
+complications of diabetes. Building their models involves
+a significant amount of iteration over approaches to regularization,
+the type of data to include in the model, and different ways of
+deriving features from the data, which could potentially be automated
+using the software described in this proposal.
+
+\subsubsection{Biostatistics}
+Prof. Christopher Fonnesbeck (Vanderbilt
+University) commited to be an early adopter of the proposed project in
+his work in statistical of biomedical data in epidemiological
+applications, such as the control of infectious disease. This work
+includes building of classification and regression models for
+meta-analysis, with the goal if supporting evidence-based medicine.
 
 \section{Broader Impacts of the Proposed Work}
 The proposed project has a wide-reaching impact on the practical use of
