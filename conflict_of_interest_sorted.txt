@@ -1,4 +1,3 @@
-
 Abraham, Alexandre (Telecom ParisTech)
 Behnke, Sven (Univserity of Bonn)
 Blondel, Mathieu (NTT Communication Science Laboratories)
@@ -7,6 +6,7 @@ Cranmers, Kyle (NYU)
 De Torrente, Laurence (New York Genome Center)
 Eckner, Sinziana (JPMorgan Chase)
 Eickenberg, Michael (INRIA)
+Fonnesbeck, Christopher (Vanderbilt University)
 Gervais, Philippe (INRIA)
 Grisel, Olivier (INRIA)
 Grobler, Jaques (Energy Partners)
