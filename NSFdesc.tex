@@ -90,9 +90,9 @@ maintainers and dependent packages.
 \section{Previous Impact of the \sklearn{} Package}
 The \sklearn{} project has been widely used in academic and industrial research,
 and has made its way into multiple commercial products. The
-paper~\autocite{pedregosa2011scikit} describing \sklearn{} has been cited over 2750 times
+paper~\autocite{pedregosa2011scikit} describing \sklearn{} has been cited over 2.750 times
 according to Google scholar\footnote{We noticed that the number of citations
-according to google scholar goes up at a rate of roughly 5 citations per day
+according to Google scholar goes up at a rate of roughly 5 citations per day
 during writing this proposal.}. Applications of \sklearn{} spread a multitude
 of research areas, including Physics~\autocite{Baldi:2016fql, Yang:2016nnd},
 Astronomy~\autocite{pereira2013spectrophotometric, bennett20141},
@@ -115,10 +115,10 @@ University, Massachusetts Institute of Technology, New York University,
 Stanford University, and University of Washington.
 The total number of unique contributors to the project is about 700.
 %
-The \sklearn{} mailing list has 1666 subscribers, including 70 email
+The \sklearn{} mailing list has 1.666 subscribers, including 70 email
 addresses from ``edu'' domains, across 43 institutes.
 %
-On the question-answering site Stack Overflow, there are around 4500 questions
+On the question-answering site Stack Overflow, there are around 4.500 questions
 tagged as \sklearn{} related, with 222 questions asked within the last 30
 days of this writing.
 
@@ -201,6 +201,22 @@ Our goal is to improve the existing infrastructure for model selection in
 \sklearn{}, and develop more novel features like meta-learning outside of the main
 \sklearn{} package, for possible later inclusion.
 
+To accomplish these goals, we will collaborate with the group of \emph{Prof.
+Frank Hutter}, who are leaders in the current research on meta-learning, and
+will allow us to built on their expertise.  We will also collaborate with the
+group of \emph{Prof. Joaquin Candela} developing the OpenML platform, to make
+sure their platform will support the needs for large-scale model comparison,
+and will be able to provide easy access to our results.
+We also established collaboration with scientists in multiple fields who apply
+machine learning in their research, to ensure that the solutions we create are
+applicable to a wide spectrum of domains.  These collaborations include
+\emph{Prof. David Hogg} (Astrophysics and Astronomy), \emph{Prof. Kyle Cranmer}
+(Experimental Particle Physics), \emph{Prof. David Sontag} (Medical Data
+Analysis), and Prof. Chris Fonnesbeck (Biostatistics), as described in the
+letters of collaboration accompanying this proposal. Their groups will adopt
+the tools created in this project to provide early feedback on their usefulness
+and provide use-cases to guide development.
+
 \section{Intellectual Merit}
 Improving automation in model selection and preprocessing in \sklearn{} will have far-reaching
 implications for existing and future applications of machine learning.
@@ -209,13 +225,13 @@ models with minimal changes to their workflow, potentially improving their resea
 For research projects that are not relying on machine learning yet, including a model
 from \sklearn{} will be much easier and require much less expert knowledge.
 
-Developing more automated model selection requires extensive benchmarking and evaluation
-on a diverse array of machine learning problems. Such a large scale evaluation,
-in the spirit of \textcite{caruana2008empirical, caruana2006empirical} and more
-recently \textcite{feurer-nips2015} can provide important insights into the
-state-of-the-art in machine learning. This proposal will not only provide
-results of extensive evaluation, it will also result in improved infrastructure
-for large scale studies of algorithms.
+Developing more automated model selection requires extensive benchmarking,
+analysis and evaluation on a diverse array of machine learning problems. Such a
+large scale evaluation, in the spirit of \textcite{caruana2008empirical,
+caruana2006empirical} and more recently \textcite{feurer-nips2015} can provide
+important insights into the state-of-the-art in machine learning. This proposal
+will not only provide results of extensive evaluation, it will also result in
+improved infrastructure for large scale studies of algorithms.
 
 \section{The \sklearn{} Package and Ecosystem}
 The \sklearn{} machine learning library is an open source library for the
@@ -277,7 +293,7 @@ can easily explore different solutions to their machine learning problems,
 with a large collection of well-tested and well-established algorithms
 at their finger tips.
 The adoption of \sklearn{} in research can be seen in the large number
-of citations (over 2750 according to Google scholar) as well as in the development
+of citations as well as in the development
 of more domain specific solutions build on \sklearn{}.
 According to the email addresses used for contributions, researchers and students
 from at least 23 US universities \emph{contributed} to \sklearn{}, indicating wide-spread use.
@@ -327,9 +343,6 @@ distributions, as well as the Python-xy distribution for Microsoft Windows.
 
 The succinct interface of \sklearn{} also lends itself well to interactive
 data exploration and model building within the Jupyter Notebook environment.
-As mentioned previously, searching for Jupyter notebooks containing
-\sklearn{} code on the GitHub code hosting platform yields about 40000
-results.
 
 \begin{figure}
     \begin{minted}[fontsize=\footnotesize]{python}
@@ -357,15 +370,15 @@ results.
     \end{minted}
     \vspace{-5mm}
     \label{gridsearch}
-    \caption{Current interface to scikit-learn classification and parameter
+    \caption{Current interface to \sklearn{} classification and parameter
         selection. The user needs to select parameters of importance (here
         \texttt{max\_depth} and \texttt{max\_features}), and values for these
         parameters to test (here 1, 3, 10 for \texttt{max\_depth} and 1, 2, 3
         for \texttt{max\_features}). Building more complex pipelines comprising
-        multiple steps of feature processing compicates the process.}
+        multiple steps of feature processing complicates the process.}
 \end{figure}
 
-\section{Proposed Enhancements}
+\section{Proposed Work}
 \enlargethispage{\baselineskip}
 The goal of this proposal
 is to implement major usability and automation features in \sklearn{}, decreasing
@@ -398,7 +411,7 @@ of datasets, like OpenML~\autocite{van2013openml}. These enhancements will
 be included directly in the \sklearn{} package.
 \begin{labeling}{Task 1}
     \itemsep-4pt
-    \item [Task 1] Benchmark parameter ranges of commonly used supervised models.
+    \item [Task 1] Analyze parameter ranges of commonly used supervised models.
     \item [Task 2] Provide default parameter ranges inside \sklearn{}.
 \end{labeling}
 
@@ -416,8 +429,8 @@ this proposal will bring the benefits of the recent advantages in model selectio
 from the machine learning community to the scientific users of \sklearn{}.
 \begin{labeling}{Task 3}
     \itemsep-4pt
-    \item [Task 3] Benchmark and integrate Gaussian Process based parameter optimization.
-    \item [Task 4] Benchmark Random Forest based parameter optimization.
+    \item [Task 3] Analyze and integrate Gaussian Process based parameter optimization.
+    \item [Task 4] Analyze Random Forest based parameter optimization.
     \item [Task 5] Integrate \texttt{auto-sklearn} Bayesian optimization with \sklearn{}.
 \end{labeling}
 
@@ -486,7 +499,7 @@ An illustration of the proposed additions is shown in Figure~\ref{additions_inte
 \begin{labeling}{Task 10}
     \itemsep-4pt
     \item [Task 10] Refactor \texttt{auto-sklearn} to make use of new pipeline and transformation conditions.
-    \item [Task 11] Benchmark meta-learning features on OpenML datasets.
+    \item [Task 11] Analyze meta-learning features on OpenML datasets.
     \item [Task 12] Create meta-learning package from the previously build
         components, with full user documentation and test coverage that is
         installable via the Python package manager.
@@ -671,7 +684,7 @@ PI M\"uller is a core developer and co-maintainer of \sklearn{} and deeply integ
 into the community around it. The PI will lead the execution of the project and the integration
 into \sklearn{} and the \sklearn{} ecosystem.
 The developer will implement the new features and review changes proposed by
-the \sklearn{} community. The developer will also perform large-scale
+the \sklearn{} community. The developer will also perform and analyze large-scale
 benchmarking experiments to validate the effectiveness of the parameter
 recommendations and the automation features.  The PI and developer will both
 interact with the greater community via issue trackers, mailing lists and
@@ -693,7 +706,7 @@ collaboration. Figure~\ref{timeline} illustrates the timeline of the project.
     ]{2016-11}{2019-10}
     \gantttitlecalendar[title/.style={draw=none, fill=none}]{year}\\
     \gantttitlecalendar[title/.append style={fill=black!10}, title label font=\tiny\color{black!10}]{year}\\
-    \ganttbar{1 Benchmark parameter ranges}{2016-11}{2017-04} \\
+    \ganttbar{1 Analyze parameter ranges}{2016-11}{2017-04} \\
     \ganttbar{2 Provide default ranges}{2017-05}{2018-4} \\
     \ganttbar{3 GP-base BO}{2016-11}{2017-10} \\
     \ganttbar{4 RF-based BO}{2017-05}{2017-10} \\
@@ -703,7 +716,7 @@ collaboration. Figure~\ref{timeline} illustrates the timeline of the project.
     \ganttbar{8 Integrate conditions in \sklearn{}}{2017-05}{2017-10} \\
     \ganttbar{9 Feature encodings in \sklearn{}}{2017-11}{2018-10} \\
     \ganttbar{10 \sklearn{} $\leftrightarrow$ \texttt{auto-sklearn} sync}{2017-11}{2018-10} \\
-    \ganttbar{11 Benchmark meta-learning}{2017-05}{2018-04} \\
+    \ganttbar{11 Analyze meta-learning}{2017-05}{2018-04} \\
     \ganttbar{12 Meta-learning packaging}{2018-11}{2019-10}
     %\ganttlinkedbar{Task 2}{3}{7} \ganttnewline
     %\ganttbar{Final Task}{8}{12}
@@ -739,7 +752,7 @@ and downloads directly from the GitHub repository. Most of these distributions p
 or impossible to track. The Python package manager for example reports over 500.000 downloads of the last
 release, which is likely to be inflated when taken as a measure of users.
 On the other hand, the number of citations of the relevant
-pape~\autocite{pedregosa2011scikit}, over 2750, is likely to underestimate
+pape~\autocite{pedregosa2011scikit}, over 2.750, is likely to underestimate
 the number of papers using the \sklearn{} library in their research.
 
 To get a more comprehensive picture of the adoption of an open source software
@@ -778,7 +791,7 @@ woman among the 13 core developers and \texttt{SciPy} having one woman out of
 To increase diversity, this proposal includes an annual workshop to increase
 contributions to the open source community, in particular targeted at women.
 To this end, we collaborate with the ``Women in Machine Learning and Data Science''
-meetup group located in New York, a community of over 1500 (mostly) female data science and
+meetup group located in New York, a community of over 1.500 (mostly) female data science and
 machine learning experts.
 
 \subsection{Collaboration with \texttt{auto-sklearn}}
@@ -788,7 +801,7 @@ selection. One of the main goals of this proposal is to transfer the research
 within the \texttt{auto-sklearn} project to an easy-to-use and well-documented
 library, integrated within the \sklearn{} ecosystem. To this end, we will
 collaborate with the \texttt{auto-sklearn} team, building upon their insights
-and technologies. Frank Hutter committed to providing the support of his group
+and technologies. \emph{Prof. Frank Hutter} committed to providing the support of his group
 to integrate our additions to \sklearn{}, such as the default parameter ranges
 and automated preprocessing selection into their software, while in turn
 providing the necessary domain knowledge to reproduce their research results in
@@ -806,9 +819,9 @@ like MNIST and small toy datasets like the iris and wine datasets, to large
 scale datasets with millions or even tens of millions of samples, ranging from
 biological, medical and physical datasets to commercial applications. This
 growing collection of research datasets provides the basis of our assessments,
-and ensure relevance of our effort across research domains.  Joaquin Candela
-committed to improving and maintaining the Python interface for the OpenML
-platform, and improving the support for \sklearn{} based models.
+and ensure relevance of our effort across research domains. \emph{Prof. Joaquin
+Candela} committed to improving and maintaining the Python interface for the
+OpenML platform, and improving the support for \sklearn{} based models.
 
 \subsection{Early Adopters}
 The following researchers have committed to being \emph{early adopters} of our
@@ -817,12 +830,12 @@ research projects, and provide valuable feedback for ensuring usefulness of the
 software for a variety of research applications:
 
 \paragraph{Experimental Particle Physics}
-Prof. Kyle Cranmer (NYU) committed to have his group be an early adopter of the
+\emph{Prof. Kyle Cranmer} (NYU) committed to have his group be an early adopter of the
 proposed project for their work on searching new phenomena at the Large Hardron
 Collider.
 
 \paragraph{Astronomy}
-Prof. David Hogg (NYU) committed to have his group be an
+\emph{Prof. David Hogg} (NYU) committed to have his group be an
 early adopter of the proposed project their projects in astronomy and
 astrophysics. In particular, they will apply the developed methods in their
 work to calibrate imaging spacecraft (like the GALEX and Kepler missions) and
@@ -830,24 +843,17 @@ in their data-driven models of stars (exemplified by our project called The
 Cannon), as well as related projects.
 
 \paragraph{Medical Data Analysis}
-Prof. David Sontag (NYU) commited to
+\emph{Prof. David Sontag} (NYU) commited to
 have his group be an early adopter of the proposed project for their
-work on building risk stratification algorithms.
-In their recent work~\autocite{razavian2015population} 
-built an algorithm to detect whether an individual is likely to
-develop Type 2 diabetes in the next 2 years, to provide early
-detection. Early detection allows the patient and their clinical team
-to perform interventions such lifestyle changes and medication on
-Metformin which are proven to significantly decrease long-term
-complications of diabetes. Building their models involves
-a significant amount of iteration over approaches to regularization,
-the type of data to include in the model, and different ways of
-deriving features from the data, which could potentially be automated
-using the software described in this proposal.
+work on building risk stratification algorithms for early detection of type 2 diabetes.
+Building their models involves a significant amount of iteration over
+approaches to regularization, the type of data to include in the model, and
+different ways of deriving features from the data, which could potentially be
+automated using the software described in this proposal.
 
 \paragraph{Biostatistics}
-Prof. Christopher Fonnesbeck (Vanderbilt
-University) commited to be an early adopter of the proposed project in
+\emph{Prof. Christopher Fonnesbeck} (Vanderbilt
+University) committed to be an early adopter of the proposed project in
 his work in statistical of biomedical data in epidemiological
 applications, such as the control of infectious disease. This work
 includes building of classification and regression models for
