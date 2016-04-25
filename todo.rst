@@ -4,7 +4,7 @@ code for grid search (done)
 timeline of project (done)
 table for API (done)
 pipeline?
-scikit-learn website traffic
+scikit-learn website traffic (done)
 cool colorful plot?
 GP illustration (nope)
 
@@ -64,7 +64,5 @@ letters (okish)
 send out
 
 
-
 heiko:
-what changes from a user point of view: add listing
 automatic model selection further up

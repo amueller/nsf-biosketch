@@ -26,7 +26,14 @@
 \usepackage{enumitem}
 \setlist{nosep}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                   %%
-\newcommand{\required}[1]{\section*{\hfil #1\hfil}}                    %%
+%\newcommand{\required}[1]{\section*{\hfil #1\hfil}}                    %%
+\titleclass{\required}{straight}[\section]
+\newcounter{required}
+\renewcommand{\therequired}{\arabic{required}}
+\titlespacing*{\required}     {0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titleformat{\required}{\filcenter\normalfont\Large\bfseries}{}{0pt}{}
+
+
 \renewcommand{\refname}{\hfil References Cited\hfil}                   %%
 \usepackage[maxbibnames=99]{biblatex}
 \bibliography{references}                                          %%
