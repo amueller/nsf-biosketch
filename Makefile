@@ -5,3 +5,4 @@ clean:
 	rubber --pdf --clean NSFmaster.tex
 	rm -rf *.aux
 	rm -rf *.log
+	rm -rf _minted*
