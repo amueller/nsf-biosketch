@@ -15,7 +15,7 @@ domain scientists outside of the field of machine learning.
 The \sklearn{} machine learning library~\autocite{pedregosa2011scikit},
 provides machine learning functionality within the established---and
 growing---scientific Python ecosystem~\autocite{benlorica, infoworld}.
-\sklearn{} is an open source library written in Python, implementing
+The \sklearn{} project is an open source project written in Python, implementing
 state-of-the-art machine
 learning algorithm and utilities to apply these algorithms to real-world data
 analysis and prediction problems.
@@ -32,7 +32,7 @@ data~\autocite{buitinck2013api}.
 Table~\ref{api} and Figure~\ref{grid_search} illustrate this interface. The
 simple and consistent interface helps to abstract away the algorithm, and let
 users focus on their particular problem. It also allows replacing an algorithm
-by another by changing a single line of code. \sklearn{} makes use of the
+by another by changing a single line of code. The \sklearn{} project{} makes use of the
 well-established NumPy library to represent data and predictions.  NumPy is
 used across domains for numeric computations, and integrating this generic
 representation into \sklearn{} minimizes the friction of applying machine
@@ -126,8 +126,9 @@ For the last 5 years, the scientific Python conference SciPy has had a \sklearn{
 showing the great demand for education in using machine learning and \sklearn{} in particular.
 In 2015, the tutorial was so overbooked that a second session was held.
 
-\sklearn{} has become the center of the machine learning ecosystem in the scientific Python community,
-with several domain-specific packages relying on and extending its functionality.
+The \sklearn{} project has become the center of the machine learning ecosystem
+in the scientific Python community, with several domain-specific packages
+relying on and extending its functionality.
 Prominent examples of scientific software packages depending on \sklearn{}
 for machine learning include \texttt{astroML}~\autocite{van2013openml} for astronomical
 data, \texttt{nilearn}~\autocite{abraham2014machine} for neuroimaging, \texttt{MNE-Python} for MEG
@@ -153,8 +154,8 @@ The \sklearn{} website containing the documentation was visited by over
 users in January, reflecting the growth of the \sklearn{} user community. See
 Figure~\ref{traffic} for a long-term trend.
 
-\sklearn{} has become so popular in teaching and data science applications that
-several books have been written about the use of
+The \sklearn{} project has become so popular in teaching and data science
+applications that several books have been written about the use of
 \sklearn{}~\autocite{garreta2013learning, hackeling2014mastering,
 hauck2014scikit, raschka2015python}. Another book, titled ``Introduction to
 machine learning with Python'' is currently in preparation by PI M\"uller.
@@ -283,7 +284,7 @@ The \sklearn{} library even has a generic test framework that allows users to
 test their own implementation against the behavior expected by \sklearn{}.
 
 \subsection{Impacts in Research}
-\sklearn{} has had an impact first in the field of machine learning,
+The \sklearn{} project has had an impact first in the field of machine learning,
 where it continues to provide a baseline for comparison, as well as a
 framework in which to develop and evaluate new machine learning algorithms.
 The much broader omni-disciplinary impact is in providing easy-to-use
@@ -304,7 +305,7 @@ In addition to being widely used as a toolkit by practitioners,
 The emphasis on accessibility, usability and documentation within
 the \sklearn{} project makes it ideal for an introductory
 course in machine learning, and allows access to a wide variety
-of algorithms. \sklearn{} is particularly popular in teaching
+of algorithms. The \sklearn{} project{} is particularly popular in teaching
 Data Science courses that focus on making inferences about
 a particular data set, rather than the mathematics that go into
 particular ways to solve machine learning problems.
@@ -332,12 +333,12 @@ without having to spend money on commercial analysis software like Matlab,
 SPSS or Stata.
 
 \subsection{Integration in Scientific Python Ecosystem}
-\sklearn{} is firmly rooted in the scientific Python ecosystem, and has been
-one of the catalysts of its success~\autocite{benlorica, infoworld}. \sklearn{}
+The \sklearn{} project is firmly rooted in the scientific Python ecosystem, and has been
+one of the catalysts of its success~\autocite{benlorica, infoworld}. The \sklearn{} project{}
 builds heavily on the foundations on \texttt{NumPy} and \texttt{SciPy}, and
 integrates easily with the popular \texttt{pandas} library for data analysis and the
 \texttt{matplotlib} library for plotting and visualization.
-\sklearn{} has been included in several scientific Python distributions, such
+The \sklearn{} package has been included in several scientific Python distributions, such
 as the popular cross-platform ContinuumIO Anaconda and Enthought Canopy
 distributions, as well as the Python-xy distribution for Microsoft Windows.
 
@@ -435,11 +436,11 @@ from the machine learning community to the scientific users of \sklearn{}.
 \end{labeling}
 
 \subsection{Automatic Preprocessing Selection}
-\sklearn{} has a build-in mechanism to construct ``pipelines'' which are complex 
-machine learning workflows, consisting of operations like feature extraction,
-feature transformation, feature selection and predictive models.
-All evaluation and parameter selection mechanisms in \sklearn{} can operate
-on these pipelines.
+The scikit-learn \sklearn{} package has a build-in mechanism to construct
+``pipelines'' which are complex machine learning workflows, consisting of
+operations like feature extraction, feature transformation, feature selection
+and predictive models.  All evaluation and parameter selection mechanisms in
+\sklearn{} can operate on these pipelines.
 However, selecting which steps to chain together, that is which preprocessing
 to use for which model, is left to the user. Currently there is no
 automatic process to compare different pipeline constructions, even though
@@ -491,9 +492,9 @@ these projects are currently in a ``research software'' state. Making these meth
 available to the wider scientific audience will require substantial engineering
 efforts. The previously described steps of incorporating Bayesian optimization
 and automatic preprocessing selection will lay the foundation to enable
-meta-learning within the
-\sklearn{} framework. These additions will likely not be included in the main
-\sklearn{} package within the scope of this proposal, but will be made available
+meta-learning within the \sklearn{} framework. These additions will likely not
+be included in the main \sklearn{} package within the scope of this proposal,
+but will be made available
 as an additional package, compatible with and extending \sklearn{} functionality.
 An illustration of the proposed additions is shown in Figure~\ref{additions_interface}.
 \begin{labeling}{Task 10}
@@ -546,7 +547,7 @@ learning across many domains of science.
 \subsection{Reduce Barrier to Entry}
 One of the premier goals of this project is to lower the barrier to entry
 to applying machine learning in scientific applications even further.
-\sklearn{} with its intuitive interface and comprehensive documentation
+The \sklearn{} package with its intuitive interface and comprehensive documentation
 has made machine learning algorithms available to a much wider audience.
 However, selecting and tuning models still requires machine learning expertise.
 The wealth of algorithmic choices for solving a particular research problem can be
@@ -608,7 +609,7 @@ in addition to the contributor. Often, many more reviews are performed. The
 pull-requests (contributions) made to the project have on average 16 comments
 made by developers and maintainers on improving code quality and algorithms.
 
-\sklearn{} has an extensive testing suite, covering 94\% of lines of code in the project.
+The \sklearn{} package has an extensive testing suite, covering 94\% of lines of code in the project.
 The test suite consists of unit tests, integration tests and algorithmic tests.
 Automated testing is performed on all algorithms in \sklearn{} to ensure a common
 interface and user experience.
@@ -631,7 +632,7 @@ easy as tagging a commit as a release.
 The continuous integration servers are also configured to rebuild the documentation on a per-change
 basis, so that the documentation website (for the development version) is always up-to-date
 with the current code.
-\sklearn{} has a history of increasingly high standards for documentation,
+The \sklearn{} project has a history of increasingly high standards for documentation,
 requiring a description of algorithms, use cases, important parameters and theory,
 as well as compelling examples~\autocite{lovesklearn, benlorica}. This culture of comprehensive and accessible documentation
 will carry over to any additions made as part of this proposal.
@@ -734,7 +735,7 @@ Consequently, there are many junior contributors with good coding skills,
 but less developed project management and timing skills.
 Therefore, it is paramount to have a senior developer to lead the efforts
 on major new features, to ensure roadmap and scoping are useful and realistic.
-\sklearn{} has around 430 open contributions (GitHub pull requests) at the moment,
+The \sklearn{} project has around 430 open contributions (GitHub pull requests) at the moment,
 which require code review and oversight from a senior developer to be integrated
 into the project. This exemplifies the size of the community of contributors,
 but also points out the bottleneck in terms of senior developers that
