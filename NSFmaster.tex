@@ -13,6 +13,7 @@
 \setlength{\headheight}{0in}      %%  of incorrect formatting!!!)      %%
 \setlength{\headsep}{0in}         %%                                   %%
 \setlength{\footskip}{.5in}       %%                                   %%
+\PassOptionsToPackage{obeyspaces, spaces}{url} % allow spaces in url, allow breaking on them
 \usepackage{hyperref}  % links within pdf
 \hypersetup{pdftex,colorlinks=true,allcolors=blue}
 \usepackage{scrextend} % labeling environment (a better description environment)
@@ -27,6 +28,8 @@
 \setlist{nosep}
 \usepackage{amsmath}   % math stuff
 \usepackage{amssymb}   % math symbols
+\usepackage[maxbibnames=99]{biblatex}
+%\setcounter{biburllcpenalty}{7000} % allow breaking urls at lowercase characters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                   %%
 % define new ``required'' section heading
 % which is not numbered and centered
@@ -38,7 +41,6 @@
 
 % list all names in the bibliography
 \renewcommand{\refname}{\hfil References Cited\hfil}                   %%
-\usepackage[maxbibnames=99]{biblatex}
 \bibliography{references}                                          %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
