@@ -1,0 +1,21 @@
+panel said:
+- marginal utility?
+- is it welcome by community?
+- novelty?
+
+
+my questions:
+- data independent optimal choices? I didn't say that, did I?
+- model comprehension etc is another grant?!
+
+do researchers want that?
+(three early adopters not enough?)
+novelty?
+
+panel most important
+do survey
+positioning of scikit-learn with other tools (spark)
+
+automation <-> data dependent
+
+usability statistics
