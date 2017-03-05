@@ -201,7 +201,6 @@ of existing users.
 Our goal is to improve the existing infrastructure for model selection in
 \sklearn{}, and develop more novel features like meta-learning outside of the main
 \sklearn{} package, for possible later inclusion.
-
 To accomplish these goals, we will collaborate with the group of \emph{Prof.
 Frank Hutter}, who are leaders in the current research on meta-learning, and
 will allow us to built on their expertise.  We will also collaborate with the
@@ -233,6 +232,9 @@ caruana2006empirical} and more recently \textcite{feurer-nips2015} can provide
 important insights into the state-of-the-art in machine learning. This proposal
 will not only provide results of extensive evaluation, it will also result in
 improved infrastructure for large scale studies of algorithms.
+To evaluate the importance of the improvements, we conducted a community survey
+among scikit-learn users, which found a large demand for this functionality.
+Details can be found in Section~\ref{community}
 
 \section{The \sklearn{} Package and Ecosystem}
 The \sklearn{} machine learning library is an open source library for the
@@ -379,14 +381,98 @@ data exploration and model building within the Jupyter Notebook environment.
         multiple steps of feature processing complicates the process.}
 \end{figure}
 
-\section{Proposed Work}
+\subsection{Related Projects}
+First, we will describe open machine learning software that poses an alternative to scikit-learn.
+Then, we will describe solutions for automatic machine learning.
+
+The software tools used in the data science community can to a large degree be
+separated by language, with Python and R by far the most popular choices, in
+particular in research environments. Other languages include Java, Scala, C++, Lua and Julia.
+
+While the R language has a rich ecosystem of tools for data analysis,
+statistical modeling and machine learning, it has two major shortcomings:
+Firstly, it is a domain specific language, specifically designed for statistic
+applications. This makes it hard to integrate into existing software, or to
+extend an R program to a web-service or a graphical user interface. Being a
+special purpose language, there are few R programmers outside the field of data
+analysis, making it harder to enter the field.
+Python on the other hand is a general purpose programming language, and is being
+widely adopted as the first programming language to be taught in schools and
+universities, owing to its simple syntax and powerful libraries. Python is widely used
+for user interfaces, web services and commercial systems.
+Secondly, the software packages available for R are highly fragmented, without
+common interfaces, often little documentation and lack of basic software development
+practices like unit tests. Because Python is rooted in the programming community
+rather than the statistics community, Python packages tend to have better software
+development practices, including version control, documentation and testing. As point
+of reference, the first unit testing framework in R was released in 2015, while a unit
+testing framework is included in the Python standard libraries since 2001.
+There are two major collections of machine learning algorithms in R: MLR and caret.
+MLR is a general framework like scikit-learn, implementing many machine learning
+algorithms, as well as model selection and evaluation. However, MLR has not found
+wide adoption, with only 550 stars on the code sharing service GitHub and 35
+contributors, compared to scikit-learn’s 15,000 stars and 769 contributors.
+\footnote{GitHub based metrics are likely to be skewed in favor of Python, as we suspect Python
+users are more likely to “star” a repository on GitHub. The number of contributors is
+likely accurate, but Python users might be more likely to contribute to a project they are
+using, so it might not be reflective of package use. We are not aware of less biased
+metrics.}
+We speculate that this low adoption is based on the number of abstractions
+within MLR that create a higher barrier to entry.
+The caret package for R has a terser interface, but also does not have the level of
+adoption of scikit-learn, with only 460 stars and 41 contributors on GitHub. While the
+caret package includes tools for model selection, data analysis and preprocessing, it
+does not actually implement any machine learning methods. Instead, it wraps existing
+implementations, making it hard to triage bugs and provide a uniform interface. The
+adoption of third-party code also leads to a unit-test coverage of the code of only 17\%
+(compared to 95\% for scikit-learn).
+In Python, the two most noteworthy related projects are the relatively recent
+tensor-flow, and the Orange toolbox. Tensor-flow is a framework for expressing
+computation graphs that can be executed efficiently on many compute infrastructures,
+including desktop PC CPUs, GPUs, mobile phones and clusters. It also supports
+automatic differentiation, that is the automatic computation of gradients in any
+computation graph. Tensor-flow was designed for deep learning research, but can be
+used more generically. While the tensor-flow library is a much lower level of
+abstraction than scikit-learn, more comparable to NumPy, tensor-flow also contains a
+module called tf.learn, which mimics the scikit-learn interface. Efforts on scikit-learn
+and tf.learn are mostly orthogonal, with tf.learn focusing solely on deep learning, with
+an emphasis on cutting edge research, while scikit-learn provides a wide array of
+time-tested methods for general machine learning applications. Most improvements
+suggested in this project also benefit the algorithms in tf.learn, as they focus on
+model-agnostic infrastructure, and therefore can be used with the scikit-learn
+compatible tf.learn models.
+
+Outside the Python and R languages, the two most widely used software tools are the
+Weka environment writen in Java and machine learning software build on top of the
+spark distributed computing framework (written in Scala).
+Weka includes a graphical user interface, which is the primary way to interact with
+the software. Weka is meant for small-scale analysis and does not scale well to large datasets.
+Spark on the other hand is an abstraction build on a cluster computing infrastructure
+and can scale elastically to datasets of nearly arbitrary size. Spark includes
+the machine learning library MLLib.
+While Spark with MLLib is the only of all the tools we mentioned that is capable of
+terrabyte-scale machine learning, only very few, highly specialize research projects have
+enough data to justify the overhead of using a distributed solution. On smaller
+datasets, solutions using a single machine are often faster, as they require less
+communication and can implement a wider variety of algorithms~\autocite{rfbench}.
+
+Weka and spark, as well as solutions in low-level languages like C and C++
+share a common problem for use in research: they are not designed for interactivity
+with the user. While there are interactive environments to program in these
+languages (even for C), there are no integrated ecosystems that would allow
+interactive exploration of data, which is central to data-driven research.
+There are no mature scientific plotting libraries for either Java or Scala, so
+generating something as simple as a bar chart or a confusion matrix can be
+challenging.
+
+
+\section{Description of Activities}
 \enlargethispage{\baselineskip}
-The goal of this proposal
-is to implement major usability and automation features in \sklearn{}, decreasing
-the domain expertise required to successfully implement machine learning models.
-We propose to improve three aspects of applying machine learning models that
-currently require substantial expert knowledge: parameter selection, model
-selection and data preprocessing.
+The goal of this proposal is to implement major usability and automation
+features in \sklearn{}, decreasing the domain expertise required to
+successfully implement machine learning models.  We propose to improve three
+aspects of applying machine learning models that currently require substantial
+expert knowledge: parameter selection, model selection and data preprocessing.
 
 \subsection{Default Parameter Ranges}
 Nearly all machine learning models come with parameters to set or tune
@@ -589,7 +675,20 @@ not only facilitating reproducibility of results, as all parameters and results
 are stored on the platform, we are also enriching the information available on OpenML
 by populating the database with our results.
 
-\section{Community Engagement, Outreach, and Sustainability}
+\section{Community Engagement, Outreach, and Sustainability}\label{community}
+\subsection{Community Survey}
+To evaluate the importance of the proposed additions to the \sklearn{} user community
+and to identify other possible aread of improvement we conducted a self-selected
+survey of the scikit-learn community. Using the \sklearn{} mailing list and social
+media, we collected 372 responses, including 184 responses from users involved
+in academic research~\footnote{The complete results can be found at https://www.surveymonkey.com/results/SM-RHGZVZ73/}.
+When asked how likely they would make use of automated machine learning functionality
+if it became available, 88\% of respondents replied they are "likely" or "very likely"
+to use automated hyper-parameter search and 72\% replied they are "likely" or "very likely"
+to use automatic model selection. When asked to pick the top 5 out of 14 possible areas of improvement,
+38\% ranked automatic parameter selection within the top five, behind "Working with out-of-memory datasets" (57\%),
+"Better pandas integration" (43\%) and "Easier visualization of data and models" (47\%).
+
 \subsection{Community Integration}
 As co-maintainer and member of the core team of developers of \sklearn{}, PI
 M\"uller is well integrated into the development process of \sklearn{}.
