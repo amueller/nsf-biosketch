@@ -68,7 +68,6 @@ maintainers and dependent packages.
     single continuous variables) or cluster memberships are produced with the
     \texttt{predict} method.
 }
-\vspace{-3mm}
 \begin{center}
     \begin{tabular}{p{.3\textwidth} p{.3\textwidth}}
     \multicolumn{2}{c}{\texttt{fit(features\_train, [labels\_train])}}\\\\
@@ -79,7 +78,6 @@ maintainers and dependent packages.
     Clustering & Feature Selection\\
                & Feature extraction\\
     \end{tabular}
-\vspace{-8mm}
 \end{center}
 \label{api}
 \end{table}
@@ -264,7 +262,7 @@ Details can be found in Section~\ref{community}.
 \end{figure}
 
 \section{Related Projects}
-In this sections we'll briefly review related projects for machine learning in general
+In this sections we briefly review related projects for machine learning in general
 and more specifically automatic machine learning.
 
 \subsection{Other Machine Learning Packages}\label{otherpackages}
@@ -376,7 +374,7 @@ algorithm implemented in \texttt{auto-sklearn}.
 
 
 \section{Description of Activities}
-\enlargethispage{\baselineskip}
+%\enlargethispage{\baselineskip}
 The goal of this proposal is to implement major usability and automation
 features in \sklearn{}, decreasing the domain expertise required to
 successfully implement machine learning models.  We propose to improve three
@@ -442,7 +440,7 @@ automatic process to compare different pipeline constructions, even though
 the right combination of methods is often crucial but not obvious in practice.
 We propose to extend the model selection and pipelining framework in \sklearn{}
 to allow automatic selection of pipeline steps.
-\enlargethispage{\baselineskip}
+%\enlargethispage{\baselineskip}
 To help automatic preprocessing selection, we will also programatically
 define input and output conditions of different processing steps, such
 as requirements for sparse data, dense data, non-negativity of features and others.
