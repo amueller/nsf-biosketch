@@ -31,10 +31,8 @@ data~\autocite{buitinck2013api}.
 Table~\ref{api} illustrates this interface. The
 simple and consistent interface helps to abstract away the algorithm, and let
 users focus on their particular problem. The \sklearn{} project{} makes use of the
-well-established NumPy library to represent data and predictions. NumPy is
-a standard library for representing numeric data in Python, and integrating this generic
-representation into \sklearn{} minimizes the friction of applying machine
-learning within an existing project.
+well-established NumPy library to represent data and predictions, minimizing
+the friction of applying machine learning within an existing project.
 
 \emph{\textbf{Comprehensiveness}} \sklearn{} implements a wide variety of
 models for classification, regression, clustering and dimensionality reduction,
@@ -70,6 +68,7 @@ maintainers and dependent packages.
     single continuous variables) or cluster memberships are produced with the
     \texttt{predict} method.
 }
+\vspace{-3mm}
 \begin{center}
     \begin{tabular}{p{.3\textwidth} p{.3\textwidth}}
     \multicolumn{2}{c}{\texttt{fit(features\_train, [labels\_train])}}\\\\
@@ -79,18 +78,18 @@ maintainers and dependent packages.
     Regression & Dimensionality Reduction\\
     Clustering & Feature Selection\\
                & Feature extraction\\
-\end{tabular}
+    \end{tabular}
+\vspace{-8mm}
 \end{center}
 \label{api}
 \end{table}
-%\pagebreak
 
 \section{Previous Impact of the \sklearn{} Package}
 The \sklearn{} project has been widely used in academic and industrial research,
 and has made its way into multiple commercial products. The
 paper~\autocite{pedregosa2011scikit} describing \sklearn{} has been cited over 5.000 times
-according to Google scholar\footnote{Nearly half of these citations have been
-within the last year, demonstrating the accelerating growth of the ecosystem.}.
+according to Google scholar\footnote{With nearly half of these citations
+within the last year, showing accelerating growth.}.
 Applications of \sklearn{} spread a multitude of research areas, including
 Physics~\autocite{Baldi:2016fql, Yang:2016nnd},
 Astronomy~\autocite{pereira2013spectrophotometric, bennett20141},
@@ -119,9 +118,6 @@ addresses from ``edu'' domains, across 43 institutes.
 On the question-answering site Stack Overflow, there are around 7.000 questions
 tagged as related to \sklearn{}.
 
-For the last 5 years, the scientific Python conference SciPy has had a \sklearn{} tutorial,
-showing the great demand for education in using machine learning and \sklearn{} in particular.
-
 The \sklearn{} project has become the center of the machine learning ecosystem
 in the scientific Python community, with several domain-specific packages
 relying on and extending its functionality.
@@ -135,13 +131,24 @@ integration with the \texttt{ROOT} scientific software framework.
 The main use of \sklearn{} is outside of these major open source packages, though,
 as standalone library for data analysis. Using the GitHub repository, we found
 about 120.000 Jupyter notebooks---a format for interactive computing with
-Python---that use \sklearn{} at the time of writing\footnote{this number trippled within the last year}.
+Python---that use \sklearn{} at the time of writing\footnote{Up from 40.000 a year ago.}.
 
 The \sklearn{} website containing the documentation was visited by over
 930.000 users in February 2017, nearly doubling within the last year.
 
-The \sklearn{} project has become so popular in teaching and data science
-applications that several books have been written about the use of
+In addition to being widely used as a toolkit by practitioners,
+\sklearn{} is also popular in teaching machine learning.
+The emphasis on accessibility, usability and documentation within
+the \sklearn{} project makes it ideal for an introductory
+course in machine learning, and allows access to a wide variety
+of algorithms.
+Academic teaching has made use of \sklearn{} at institutes including New York
+University, Brown University, Duke University, University of California
+Berkeley, Stanford University, Princeton University, Columbia University,
+University of Pennsylvania, Georgetown University, Cornell University and
+others.
+
+There have been several books have written about the use of
 \sklearn{} including ``Introduction to machine learning with Python'' by PI
 M\"uller.~\autocite{garreta2013learning, hackeling2014mastering,
 hauck2014scikit, raschka2015python} 
@@ -219,112 +226,8 @@ important insights into the state-of-the-art in machine learning. This proposal
 will not only provide results of extensive evaluation, it will also result in
 improved infrastructure for large scale studies of algorithms.
 To evaluate the importance of the improvements, we conducted a community survey
-among scikit-learn users, which found a large demand for this functionality.
+among \sklearn{} users, which found a large demand for this functionality.
 Details can be found in Section~\ref{community}.
-
-\section{The \sklearn{} Package and Ecosystem}
-The \sklearn{} machine learning library is an open source library for the
-Python programming language, distributed under a BSD license.
-It is developed largely by a community of volunteers, with some support from
-INRIA, Telecom ParisTech, Paris-Saclay Center for Data Science and through Columbia University..
-The package was first released in 2010, and new releases are made semi-annually.
-The development team has 38 members, with releases and project management being
-coordinated between PI M\"uller and Olivier Grisel at INRIA\@.
-There have been approximately 670 contributors to the project so far, demonstrating
-the wide community engagement, with each release typically including changes
-from 100 to 150 contributors.
-
-\subsection{Project Description}
-The \sklearn{} project focusses on efficient and easy-to-use implementation
-of state-of-the-art machine learning algorithms that are useful for a wide
-audience of machine learning practitioners in research and commercial
-applications~\cite{pedregosa2011scikit, buitinck2013api}.
-Implemented algorithms include Support Vector Machines, Random Forests, Gradient Boosting,
-Non-Negative Matrix factorization, Independent Component Analysis, K-Means, DBSCAN, Isomap,
-t-SNE and many others. To enable easy evaluation and model selection, \sklearn{}
-implements metrics like the $R^2$, AUC, Adjusted Rand score, Mutual information, Average precision
-and many more. Additionally, a framework for cross-validation and parameter selection is
-provided, allowing parameter tuning with very little effort.
-
-Given that \sklearn{} is mostly developed and maintained by volunteers,
-one of the core principles of \sklearn{} is to lower the barrier for new developers,
-and keep the complexity of the code as low as possible, to simplify maintenance.
-The success of this approach can be seen in the large number of contributors to
-the project.
-
-\subsection{Interface and Extensibility}
-The simple interface of \sklearn{} has received substantial
-recognition for its user friendly design~\cite{benlorica, testimonials}.
-The main functionality of machine learning models can
-be summarized using just three functions (see Table~\ref{api}):
-\begin{labeling}{\texttt{transform}}
-    \itemsep-4pt
-    \item[\texttt{fit}] for building models
-    \item[\texttt{predict}] for creating predictions
-    \item[\texttt{transform}] for generating new representations.
-\end{labeling}
-Creating a custom model or preprocessing method using this interface is very simple,
-and a way in which many users extend the functionality. The \sklearn{} documentation
-has comprehensive documentation on the conventions and interfaces in \sklearn{},
-to promote the creation of custom extensions.
-
-\subsection{Impacts in Research}
-The \sklearn{} project has had an impact first in the field of machine learning,
-where it continues to provide a baseline for comparison, as well as a
-framework in which to develop and evaluate new machine learning algorithms.
-The much broader omni-disciplinary impact is in providing easy-to-use
-tools for solving machine learning tasks. By providing a collection
-of methods with a simple and consistent interface, researchers
-can easily explore different solutions to their machine learning problems,
-with a large collection of well-tested and well-established algorithms
-at their finger tips, as witnessed by the number of citations of the
-paper describing \sklearn{}.
-
-\subsection{Impacts in Education}
-In addition to being widely used as a toolkit by practitioners,
-\sklearn{} is also popular in teaching machine learning.
-The emphasis on accessibility, usability and documentation within
-the \sklearn{} project makes it ideal for an introductory
-course in machine learning, and allows access to a wide variety
-of algorithms. The \sklearn{} project{} is particularly popular in teaching
-Data Science courses that focus on making inferences about
-a particular data set, rather than the mathematics that go into
-particular ways to solve machine learning problems.
-Data Science courses are usually targeted at a broad spectrum
-of students with mixed backgrounds, providing them
-with the data analysis tools useful across domains.
-
-Academic teaching has made use of \sklearn{} at institutes including New York
-University, Brown University, Duke University, University of California
-Berkeley, Stanford University, Princeton University, Columbia University,
-University of Pennsylvania, Georgetown University, Cornell University and
-others.
-
-\subsection{Reproducibility, Democratization and Openness}
-An important contribution of \sklearn{} has been in providing a common
-ground for scientists to base their research on. Reimplementing
-and algorithm from a text book or the description in a paper is often not
-straight-forward, and slight differences in implementation details can
-lead to different experimental outcomes. By providing shared, open and 
-accessible infrastructure that is used by many research groups,
-\sklearn{} facilitates reproducibility of algorithmic results.
-The open source nature of \sklearn{} means that everybody can have access
-to advanced machine learning within the scientific Python ecosystem,
-without having to spend money on commercial analysis software like Matlab,
-SPSS or Stata.
-
-\subsection{Integration in Scientific Python Ecosystem}
-The \sklearn{} project is firmly rooted in the scientific Python ecosystem, and has been
-one of the catalysts of its success~\autocite{benlorica, infoworld}. The \sklearn{} project{}
-builds heavily on the foundations on \texttt{NumPy} and \texttt{SciPy}, and
-integrates easily with the popular \texttt{pandas} library for data analysis and the
-\texttt{matplotlib} library for plotting and visualization.
-The \sklearn{} package has been included in several scientific Python distributions, such
-as the popular cross-platform ContinuumIO Anaconda and Enthought Canopy
-distributions, as well as the Python-xy distribution for Microsoft Windows.
-
-The succinct interface of \sklearn{} also lends itself well to interactive
-data exploration and model building within the Jupyter Notebook environment.
 
 \begin{figure}
     \begin{minted}[fontsize=\footnotesize]{python}
@@ -360,6 +263,10 @@ data exploration and model building within the Jupyter Notebook environment.
         multiple steps of feature processing complicates the process.}
 \end{figure}
 
+\section{Related Projects}
+In this sections we'll briefly review related projects for machine learning in general
+and more specifically automatic machine learning.
+
 \subsection{Other Machine Learning Packages}\label{otherpackages}
 The software tools used in the data science community can to a large degree be
 separated by language, with Python and R by far the most popular choices, in
@@ -384,73 +291,53 @@ development practices, including version control, documentation and testing. As 
 of reference, the first unit testing framework in R was released in 2015, while a unit
 testing framework is included in the Python standard libraries since 2001.
 
-There are two major collections of machine learning algorithms in R: MLR and caret.
-MLR is a general framework like scikit-learn, implementing many machine learning
-algorithms, as well as model selection and evaluation. However, MLR has not found
-wide adoption, with only 550 stars on the code sharing service GitHub and 35
-contributors, compared to scikit-learn’s 15,000 stars and 769 contributors.
-\footnote{GitHub based metrics are likely to be skewed in favor of Python, as we suspect Python
-users are more likely to “star” a repository on GitHub. The number of contributors is
-likely accurate, but Python users might be more likely to contribute to a project they are
-using, so it might not be reflective of package use. We are not aware of less biased
-metrics.}
-We speculate that this low adoption is based on the number of abstractions
-within MLR that create a higher barrier to entry.
-The caret package for R has a terser interface, but also does not have the level of
-adoption of scikit-learn, with only 460 stars and 41 contributors on GitHub. While the
-caret package includes tools for model selection, data analysis and preprocessing, it
-does not actually implement any machine learning methods. Instead, it wraps existing
-implementations, making it hard to triage bugs and provide a uniform interface. The
-adoption of third-party code also leads to a unit-test coverage of the code of only 17\%
-(compared to 95\% for scikit-learn).
-
-In Python, the two most noteworthy related projects are the relatively recent
-tensor-flow, and the Orange toolbox. Tensor-flow is a framework for expressing
-computation graphs that can be executed efficiently on many compute infrastructures,
-including desktop PC CPUs, GPUs, mobile phones and clusters. It also supports
-automatic differentiation, that is the automatic computation of gradients in any
-computation graph. Tensor-flow was designed for deep learning research, but can be
-used more generically. While the tensor-flow library is a much lower level of
-abstraction than scikit-learn, more comparable to NumPy, tensor-flow also contains a
-module called tf.learn, which mimics the scikit-learn interface. Efforts on scikit-learn
-and tf.learn are mostly orthogonal, with tf.learn focusing solely on deep learning, with
-an emphasis on cutting edge research, while scikit-learn provides a wide array of
-time-tested methods for general machine learning applications. Most improvements
-suggested in this project also benefit the algorithms in tf.learn, as they focus on
-model-agnostic infrastructure, and therefore can be used with the scikit-learn
+In Python, the most noteworthy related project is the relatively recent
+tensor-flow. Tensor-flow is a framework for expressing computation graphs that
+can be executed efficiently on many compute infrastructures from mobile phones to clusters.
+Tensor-flow was designed for deep learning research, but can
+be used more generically. Tensor-flow also
+contains a module called tf.learn, which provides a high-level interface for deep learning,
+mimicing the \sklearn{} interface.
+Efforts on \sklearn{} and tf.learn are mostly orthogonal, with tf.learn
+focusing solely on deep learning, with an emphasis on cutting edge research,
+while \sklearn{} provides a wide array of time-tested methods for general
+machine learning applications. Most improvements suggested in this project also
+benefit the algorithms in tf.learn, as they focus on model-agnostic
+infrastructure, and therefore can be used with the \sklearn{}
 compatible tf.learn models.
 
-Outside the Python and R languages, the two most widely used software tools are the
-Weka environment writen in Java and machine learning software build on top of the
-spark distributed computing framework (written in Scala).
+Outside the Python and R languages, the two most widely used software tools are
+the Weka environment writen in Java and machine learning software build on top
+of the spark distributed computing framework (written in Scala).
 Weka includes a graphical user interface (GUI), which is the primary way to interact with
-the software. Weka is meant for small-scale analysis and does not scale well to large datasets.
-Furthermore, working within the GUI severely limits the available tools compared to
+the software.  Working within the GUI severely limits the available tools compared to
 having the full flexibility of a programming language like Python or R.
+Weka is meant for small-scale analysis and does not scale well to large datasets.
 
-In contrast, spark is an abstraction build on a cluster computing infrastructure
-and can scale elastically to datasets of nearly arbitrary size. Spark includes
-the machine learning library MLLib.
+In contrast, spark is an abstraction build on a cluster computing
+infrastructure and can scale elastically to datasets of nearly arbitrary size.
+Spark includes the machine learning library MLLib, which contains a collection
+of popular machine learning algorithms.
 While Spark with MLLib is the only of all the tools we mentioned that is capable of
 terrabyte-scale machine learning, only very few, highly specialize research projects have
 enough data to justify the overhead of using a distributed solution. On smaller
 datasets, solutions using a single machine are often faster, as they require less
 communication and can implement a wider variety of algorithms~\autocite{rfbench}.
 
-Weka and spark, as well as solutions in low-level languages like C and C++
+Weka and spark, as well as solutions in low-level, high-performance languages,
 share a common problem for use in research: they are not designed for interactivity
-with the user. While there are interactive environments to program in these
-languages (even for C), there are no integrated ecosystems that would allow
+with the user. There are no integrated ecosystems that would allow
 interactive exploration of data, which is central to data-driven research.
-There are no mature scientific plotting libraries for either Java or Scala, so
+For eaxmple, there are no mature scientific plotting libraries for either Java or Scala, so
 generating something as simple as a bar chart or a confusion matrix can be
 challenging.
 
 
 \subsection{Existing Solutions for Automatic Machine Learning}
-Within recent years, several implementations of automatic machine learning
-have been published. Many available solutins are implementations of global optimization
-algorithms, such as genetic programming and Bayesian optimization.
+Within recent years, several implementations of automatic machine learning have
+been published, usually as research software accompanying a paper. Many
+available solutins are implementations of global optimization algorithms, such
+as genetic programming and Bayesian optimization.
 These packages provide a black-box optimization method, but require additional
 work to define the search space and integrate with the actual machine learning
 algorithms. Furthermore, these packages do not provide any meta-learning capabilities.
@@ -497,7 +384,7 @@ aspects of applying machine learning models that currently require substantial
 expert knowledge: parameter selection, model selection and data preprocessing.
 
 \subsection{Default Parameter Ranges}
-Nearly all machine learning models come with parameters to set or tune
+Nearly all machine learning models come with hyper-parameters to set or tune
 to achieve good predictive performance. The most wide-spread way to adjust
 these parameters is grid-search with nested cross-validation.
 Grid-search consists of an exhaustive search over all possible combinations
@@ -509,7 +396,7 @@ over all of them infeasible. However, in practice only a small subset
 of the parameters is usually critical for good performance. This set,
 and good candidate values to try, are often not well-documented in research and
 not included in text books.
-The \sklearn{} documentation tries to give guidance, but these can be hard
+The \sklearn{} documentation tries to give guidance, but can be hard
 to find and understand by people outside of machine learning.
 We propose the inclusion of a programmatic way to query for the parameters
 to adjust for each model, and what good parameter ranges are.
@@ -544,7 +431,7 @@ from the machine learning community to the scientific users of \sklearn{}.
 \end{labeling}
 
 \subsection{Automatic Preprocessing Selection}
-The scikit-learn \sklearn{} package has a build-in mechanism to construct
+The \sklearn{} package has a build-in mechanism to construct
 ``pipelines'' which are complex machine learning workflows, consisting of
 operations like feature extraction, feature transformation, feature selection
 and predictive models.  All evaluation and parameter selection mechanisms in
@@ -701,7 +588,7 @@ by populating the database with our results.
 \subsection{Community Survey}
 To evaluate the importance of the proposed additions to the \sklearn{} user community
 and to identify other possible aread of improvement we conducted a self-selected
-survey of the scikit-learn community. Using the \sklearn{} mailing list and social
+survey of the \sklearn{} community. Using the \sklearn{} mailing list and social
 media, we collected 372 responses, including 184 responses from users involved
 in academic research~\footnote{The complete results can be found at https://www.surveymonkey.com/results/SM-RHGZVZ73/}.
 When asked how likely they would make use of automated machine learning functionality
@@ -745,18 +632,11 @@ and quality standards inside the \sklearn{} community, ensuring high quality, we
 Similar to the processes for reviews and testing, the proposed project will
 also be able to take advantage of the well-tested documentation and distribution
 infrastructure of \sklearn{}.
-As mentioned above, there is continuous integration testing on multiple operating systems,
-ensuring compatibility and seamless installation across platforms.
-The integration services are also set up to build binary releases of the \sklearn{} package
-for distribution, so that making a release that can be installed on any platform is as
-easy as tagging a commit as a release.
-The continuous integration servers are also configured to rebuild the documentation on a per-change
-basis, so that the documentation website (for the development version) is always up-to-date
-with the current code.
-The \sklearn{} project has a history of increasingly high standards for documentation,
-requiring a description of algorithms, use cases, important parameters and theory,
-as well as compelling examples~\autocite{lovesklearn, benlorica}. This culture of comprehensive and accessible documentation
-will carry over to any additions made as part of this proposal.
+The \sklearn{} project has a history of increasingly high standards for
+documentation, requiring a description of algorithms, use cases, important
+parameters and theory, as well as compelling examples~\autocite{lovesklearn,
+benlorica}. This culture of comprehensive and accessible documentation will
+carry over to any additions made as part of this proposal.
 
 \subsection{Sustainability Plan}
 The \sklearn{} community has grown substantially over the years, and volunteer efforts
@@ -825,21 +705,21 @@ collaboration. Figure~\ref{timeline} illustrates the timeline of the project.
     bar height=.6,
     bar label node/.append style={align=left, text width=7cm},
     y unit title=.3cm
-    ]{2016-11}{2019-10}
+    ]{2017-10}{2020-09}
     \gantttitlecalendar[title/.style={draw=none, fill=none}]{year}\\
     \gantttitlecalendar[title/.append style={fill=black!10}, title label font=\tiny\color{black!10}]{year}\\
-    \ganttbar{1 Analyze parameter ranges}{2016-11}{2017-04} \\
-    \ganttbar{2 Provide default ranges}{2017-05}{2018-4} \\
-    \ganttbar{3 GP-base BO}{2016-11}{2017-10} \\
-    \ganttbar{4 RF-based BO}{2017-05}{2017-10} \\
-    \ganttbar{5 Integrate with \texttt{auto-sklearn} BO}{2017-11}{2018-10} \\
-    \ganttbar{6 Searching pipeline steps}{2016-11}{2017-04} \\
-    \ganttbar{7 Transformation conditions}{2016-11}{2017-04} \\
-    \ganttbar{8 Integrate conditions in \sklearn{}}{2017-05}{2017-10} \\
-    \ganttbar{9 Feature encodings in \sklearn{}}{2017-11}{2018-10} \\
-    \ganttbar{10 \sklearn{} $\leftrightarrow$ \texttt{auto-sklearn} sync}{2017-11}{2018-10} \\
-    \ganttbar{11 Analyze meta-learning}{2017-05}{2018-04} \\
-    \ganttbar{12 Meta-learning packaging}{2018-11}{2019-10}
+    \ganttbar{1 Analyze parameter ranges}{2017-10}{2018-04} \\
+    \ganttbar{2 Provide default ranges}{2018-05}{2019-4} \\
+    \ganttbar{3 GP-base BO}{2017-10}{2018-10} \\
+    \ganttbar{4 RF-based BO}{2018-05}{2018-10} \\
+    \ganttbar{5 Integrate with \texttt{auto-sklearn} BO}{2018-11}{2019-10} \\
+    \ganttbar{6 Searching pipeline steps}{2017-10}{2018-04} \\
+    \ganttbar{7 Transformation conditions}{2017-10}{2018-04} \\
+    \ganttbar{8 Integrate conditions in \sklearn{}}{2018-05}{2018-10} \\
+    \ganttbar{9 Feature encodings in \sklearn{}}{2018-11}{2019-10} \\
+    \ganttbar{10 \sklearn{} $\leftrightarrow$ \texttt{auto-sklearn} sync}{2018-11}{2019-10} \\
+    \ganttbar{11 Analyze meta-learning}{2018-05}{2019-04} \\
+    \ganttbar{12 Meta-learning packaging}{2019-11}{2020-9}
     %\ganttlinkedbar{Task 2}{3}{7} \ganttnewline
     %\ganttbar{Final Task}{8}{12}
     \end{ganttchart}
@@ -870,21 +750,21 @@ success and impact of an addition to an existing open source project even more
 so. Open source software has many paths of distribution, few of which can
 be tracked reliably.
 The number of citations of the relevant paper~\autocite{pedregosa2011scikit}
-could be used instead, but is  likely to underestimate the number of papers
-using the \sklearn{} library in their research, as software is often not cited.
+could be used instead, but is likely to underestimate the number of research
+projects using the \sklearn{} library in their research, as software is often
+not cited.
 
 To get a more comprehensive picture of the adoption of an open source software
-package, we can look at the citation and download counts together with other
-statistics, like the number of discussions on the question answering site
-Stack Overflow, the number of contributors, the number of people writing to the
-mailing list, the number of projects depending on the package etc.  These
-numbers are particularly meaningful when compared to other projects with a
-similar scope.
+we can look at other statistics like the number of discussions on the question
+answering site Stack Overflow, the number of contributors, the number of people
+writing to the mailing list, the number of projects depending on the package
+etc. These numbers are particularly meaningful when compared to other projects
+with a similar scope.
 
 We will develop the more novel features outside of the \sklearn{} package, which will
-ease measuring the impact of the proposed additions. The impact of contributions
-to the \sklearn{} package, however, is harder to measure. One simple measure of impact
-is that some the proposed features will actually be integrated into \sklearn{}.
+ease measuring the impact of the proposed additions. For the components that will
+be integrated into \sklearn{}, one simple measure of impact
+is that it is actually be integrated into \sklearn{}.
 Even though the PI is tied into the core developer team, there is no guarantee
 a contribution will be accepted unless it meets the very high standars
 on code quality, usability and usefulness set by the community.
@@ -939,9 +819,9 @@ proposal, in providing guidance for good parameter ranges, and assessing the
 success of automatic model selection methods. The OpenML
 project~\autocite{van2013openml} provides a quickly growing database of machine
 learning datasets with associated tasks, including classification and
-regression~\autocite{vanschoren2014openml}. At the time of this writing, there
+regression~\autocite{vanschoren2014openml}. Currently, there
 were nearly 20.000 datasets hosted on OpenML, ranging from classical datasets
-like MNIST and small toy datasets like the iris and wine datasets, to large
+like MNIST and small toy datasets like the iris dataset, to large
 scale datasets with millions or even tens of millions of samples, from domains
 including as biology, medicine and physical sciences and commercial applications.
 This growing collection of research datasets provides the basis of our
