@@ -1,0 +1,20 @@
+Machine learning is a central component in many data-driven research areas, but
+it's adoption is limited by the often complex choice of data processing, model,
+and hyper-parameter settings.
+The goal of this project is to create software tools that enable automatic machine learning,
+that is solving predictive analytics tasks without requiring the user to explicitly
+specify the algorithm or model hyper-parameters used for prediction.
+The software developed in this will enable a wider use of machine learning, by
+providing tools to apply machine learning without requiring knowledge of the
+details of the algorithms involved.
+
+The project extends the existing scikit-learn project, a machine learning library
+for Python, which is widely used in academic research across disciplines.
+The project will add features to this library to lower the amount of expert knowledge
+required to apply models to a new problem, and to facilitate the interaction with
+automated machine learning systems.
+The project will also create a separate software package that includes models
+for automatic supervised learning, with a very simple interface, requiring
+minimal user interaction. In contrast to existing research projects, this project
+focusses on creating easy-to-use tools that can be used by researchers without
+extensive training in machine learning or computer science.
