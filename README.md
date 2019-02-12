@@ -1,2 +1,2 @@
-# nsf_sse
-grant application for sse 2016
+# NSF biosketch
+Stand-alone biosketch in NSF format

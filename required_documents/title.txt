@@ -1,8 +1,0 @@
-Improving Scikit-learn usability and automation.
-
-The proposal is titled "Improving Scikit-learn usability and automation".
-The goal of the proposal is to support continued maintenance of scikit-learn,
-and increase automation and usability, to a degree where scikit-learn can be
-used by non-experts without understanding the intricacies of the different
-algorithms.
-
