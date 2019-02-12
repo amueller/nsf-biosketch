@@ -64,17 +64,52 @@
 
 \begin{document}
 
-    \include{NSFdata}
+%\printbibliography{}
 
-    \include{NSFsumm}
+%%%%%%%%% BIOGRAPHICAL SKETCH -- 2 pages
 
-    \setcounter{page}{1}
-    \pagestyle{plain}
-    % page numbers only in project description
-    \include{NSFdesc}
+\required{Biographical Sketch: Andreas C. M\"uller}
+\section*{Professional Preparation}
+\begin{tabular}{l l l l}
+University of Bonn& Germany& Mathematics     &  Vordiplom 2005\\
+University of Bonn& Germany& Mathematics     &  Diplom 2009\\
+University of Bonn& Germany& Computer Science&  PhD 2014\\
+\end{tabular}
 
-    \pagestyle{empty}
-    \printbibliography{}
-    \include{NSFbio}
+\section*{Appointments}
+\begin{tabular}{l l}
+since 2018& Associate Research Scientist, Columbia University\\
+2016--2018& Lecturer in Data Science, Columbia University\\
+2014--2016& Research Engineer, NYU Center for Data Science\\
+2013--2014& Machine Learning Scientist, Amazon Germany\\
+\end{tabular}
+
+\section*{Five related products}
+\begin{itemize}
+    \item \fullcite{mueller2017introduction}
+    \item \fullcite{olivier_grisel_2016_49910}  % sklearn package
+    \item \fullcite{buitinck2013api}            % api paper
+    \item \fullcite{andreas_mueller_2016_49909} % pystruct package
+    \item \fullcite{Varoquaux_2015}             
+\end{itemize}
+\pagebreak
+\section*{Five other significant products}
+\begin{itemize}
+    \item \fullcite{abraham2014machine}
+    \item \fullcite{muller2014pystruct}
+    \item \fullcite{muller2012information}
+    \item \fullcite{scherer2010evaluation}
+    \item \fullcite{muller2014learning}
+\end{itemize}
+
+\section*{Synergistic Activities}
+\begin{itemize}
+\item Software Carpentry instructor, contributor to software carpentry and data
+    carpentry teaching material.
+\item Regular tutorials on machine learning and scikit-learn, materials published under CC-0 license.
+\item Contributions to the OpenML open souce project.
+\item Contributions to the nbconvert open source project for publishing using Jupyter Notebooks.
+\item Organizer of regular ``coding sprints'' to broaden the contributor base of open source projects, with an annual event focussed on female developers.
+\end{itemize}
 
 \end{document}

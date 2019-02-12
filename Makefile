@@ -1,4 +1,4 @@
-all: NSFbio.tex  NSFdata.tex  NSFdesc.tex  NSFmaster.tex  references.bib  NSFsumm.tex references.bib meta-learning-diagram.pdf
+all: NSFmaster.tex references.bib
 	rubber -c 'setlist arguments --shell-escape' --unsafe --pdf NSFmaster.tex 
 
 clean: 
