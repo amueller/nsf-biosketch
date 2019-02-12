@@ -1,0 +1,115 @@
+
+%%%%%%%%% MASTER -- compiles the 4 sections
+
+\documentclass[11pt,letterpaper]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% EXACT 1in MARGINS %%%%%%%                                   %%
+\setlength{\textwidth}{6.5in}     %%                                   %%
+\setlength{\oddsidemargin}{0in}   %% (It is recommended that you       %%
+\setlength{\evensidemargin}{0in}  %%  not change these parameters,     %%
+\setlength{\textheight}{8.5in}    %%  at the risk of having your       %%
+\setlength{\topmargin}{0in}       %%  proposal dismissed on the basis  %%
+\setlength{\headheight}{0in}      %%  of incorrect formatting!!!)      %%
+\setlength{\headsep}{0in}         %%                                   %%
+\setlength{\footskip}{.5in}       %%                                   %%
+\PassOptionsToPackage{obeyspaces, spaces}{url} % allow spaces in url, allow breaking on them
+\usepackage{hyperref}  % links within pdf
+\hypersetup{pdftex,colorlinks=true,allcolors=blue}
+\usepackage{scrextend} % labeling environment (a better description environment)
+\usepackage{hypcap}    % captions for floats? not sure this does anything?
+\usepackage{xspace}    % correct spacing after new commands
+\usepackage{pgfgantt}  % gantt diagram (timeline)
+\usepackage{minted}    % syntax highlighting
+\usepackage{booktabs}  % tables
+\usepackage{sidecap}   % caption next to figure
+\usepackage{titlesec}  % section header formatting (spacing)
+\usepackage{enumitem}  % no space between list items
+\setlist{nosep}
+\usepackage{amsmath}   % math stuff
+\usepackage{amssymb}   % math symbols
+\usepackage[maxbibnames=99]{biblatex}
+%\setcounter{biburllcpenalty}{7000} % allow breaking urls at lowercase characters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                   %%
+% define new ``required'' section heading
+% which is not numbered and centered
+\titleclass{\required}{straight}[\section]
+\newcounter{required}
+\renewcommand{\therequired}{\arabic{required}}
+\titlespacing*{\required}     {0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titleformat{\required}{\filcenter\normalfont\Large\bfseries}{}{0pt}{}
+
+% list all names in the bibliography
+\renewcommand{\refname}{\hfil References Cited\hfil}                   %%
+\bibliography{references}                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%PUT YOUR MACROS HERE
+\newcommand{\sklearn}[0]{\texttt{scikit-learn}\xspace}                    %%
+\preto\fullcite{\AtNextCite{\defcounter{maxnames}{200}}}
+
+% these are the defaults for orientation
+%\titlespacing*{\section}      {0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+%\titlespacing*{\subsection}   {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+%\titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+%\titlespacing*{\paragraph}    {0pt}{3.25ex plus 1ex minus .2ex}{1em}
+% these are what we'll actually use
+\titlespacing*{\section}      {0pt}{3.0ex plus 2ex minus .3ex}{2.0ex plus .2ex minus .2ex}
+%\titlespacing*{\section}      {0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing*{\subsection}   {0pt}{3.0ex plus 2ex minus .3ex}{1.0ex plus .2ex minus .2ex}
+%\titlespacing*{\subsubsection}{0pt}{1.0ex plus 2ex minus .3ex}{0.3ex plus .2ex minus .2ex}
+\titlespacing*{\paragraph}    {0pt}{2.0ex plus 2ex minus .3ex}{1em}
+
+\pagestyle{empty}
+
+\begin{document}
+
+%\printbibliography{}
+
+%%%%%%%%% BIOGRAPHICAL SKETCH -- 2 pages
+
+\required{Biographical Sketch: Andreas C. M\"uller}
+\section*{Professional Preparation}
+\begin{tabular}{l l l l}
+University of Bonn& Germany& Mathematics     &  Vordiplom 2005\\
+University of Bonn& Germany& Mathematics     &  Diplom 2009\\
+University of Bonn& Germany& Computer Science&  PhD 2014\\
+\end{tabular}
+
+\section*{Appointments}
+\begin{tabular}{l l}
+since 2018& Associate Research Scientist, Columbia University\\
+2016--2018& Lecturer in Data Science, Columbia University\\
+2014--2016& Research Engineer, NYU Center for Data Science\\
+2013--2014& Machine Learning Scientist, Amazon Germany\\
+\end{tabular}
+
+\section*{Five related products}
+\begin{itemize}
+    \item \fullcite{mueller2017introduction}
+    \item \fullcite{olivier_grisel_2016_49910}  % sklearn package
+    \item \fullcite{buitinck2013api}            % api paper
+    \item \fullcite{andreas_mueller_2016_49909} % pystruct package
+    \item \fullcite{Varoquaux_2015}             
+\end{itemize}
+\pagebreak
+\section*{Five other significant products}
+\begin{itemize}
+    \item \fullcite{abraham2014machine}
+    \item \fullcite{muller2014pystruct}
+    \item \fullcite{muller2012information}
+    \item \fullcite{scherer2010evaluation}
+    \item \fullcite{muller2014learning}
+\end{itemize}
+
+\section*{Synergistic Activities}
+\begin{itemize}
+\item Software Carpentry instructor, contributor to software carpentry and data
+    carpentry teaching material.
+\item Regular tutorials on machine learning and scikit-learn, materials published under CC-0 license.
+\item Contributions to the OpenML open souce project.
+\item Contributions to the nbconvert open source project for publishing using Jupyter Notebooks.
+\item Organizer of regular ``coding sprints'' to broaden the contributor base of open source projects, with an annual event focussed on female developers.
+\end{itemize}
+
+\end{document}

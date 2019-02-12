@@ -1,5 +1,5 @@
-all: NSFmaster.tex references.bib
-	rubber -c 'setlist arguments --shell-escape' --unsafe --pdf NSFmaster.tex 
+all: NSFbio.tex references.bib
+	rubber -c 'setlist arguments --shell-escape' --unsafe --pdf NSFbio.tex 
 
 clean: 
 	rubber --pdf --clean NSFmaster.tex
