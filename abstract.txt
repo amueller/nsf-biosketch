@@ -16,5 +16,5 @@ automated machine learning systems.
 The project will also create a separate software package that includes models
 for automatic supervised learning, with a very simple interface, requiring
 minimal user interaction. In contrast to existing research projects, this project
-focusses on creating easy-to-use tools that can be used by researchers without
+focuses on creating easy-to-use tools that can be used by researchers without
 extensive training in machine learning or computer science.
